@@ -4,12 +4,12 @@
  	<div class="login-bg" id="helpbox1" >
 		<div class="login-bg-con">
 			<div class="bottombg-2">
-	            		<input class="bottom-input1" id="LoginUsername" name="username" type="text" placeholder="{_Username}" value="" onKeyPress="return ChkKeyCode('L',event);" size="12" tabindex="1" />
-            			<input class="bottom-input1" id="LoginPwd" name="pwd" type="password" placeholder="{_Passwd}" value="" onKeyPress="return ChkKeyCode('L',event);" size="12" tabindex="2" />
-            			<input class="bottom-input2" id="LoginAuthnum" name="authnum" type="text" size="4" maxlength="4" placeholder="{_AuthCode}" value="" onKeyPress="return ChkKeyCode('+I',event);" tabindex="3" />
-              			<div class="codemu"><img id="LoginAutonumImg" src="../../app/autonum.php" align="absmiddle" width="55" height="23"  /></div>
-                    		<input type="submit" class="loginbt"  value="" />
-	            		<div class="bottom-for"><a href="../../app/user/forget.php">忘記密碼</a></div>
+				<input class="bottom-input1" id="LoginUsername" name="username" type="text" placeholder="{_Username}" value="" onKeyPress="return ChkKeyCode('L',event);" size="12" tabindex="1" />
+				<input class="bottom-input1" id="LoginPwd" name="pwd" type="password" placeholder="{_Passwd}" value="" onKeyPress="return ChkKeyCode('L',event);" size="12" tabindex="2" />
+ 				<input class="bottom-input2" id="LoginAuthnum" name="authnum" type="text" size="4" maxlength="4" placeholder="{_AuthCode}" value="" onKeyPress="return ChkKeyCode('+I',event);" tabindex="3" />
+       			<div class="codemu"><img id="LoginAutonumImg" src="../../app/autonum.php" align="absmiddle" width="55" height="23"  /></div>
+           		<input type="submit" class="loginbt"  value="" />
+	        	<div class="bottom-for"><a href="../../app/user/forget.php">忘記密碼</a></div>
 			</div>
 	        <div class="kaihu-btn"><a href="../../app/user/join1.php"><img src="http://{IMG_URL}/sites/{SITE}/images/{LANGX}/kaihu.png?v=912" width="145" height="41" /></a></div>
 	        <div class="kaihu-btn"><a href="javascript:void(0);" onclick="testplay();"><img src="http://{IMG_URL}/sites/{SITE}/images/{LANGX}/shiwan.png?v=912" width="145" height="41" /></a></div>
@@ -21,7 +21,7 @@
 <div id="div_LoginSuccess" style="position:absolute; z-index:99210; display:none; margin:0 auto;">
   <table border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td><img src="http://{IMG_URL}/sites/{SITE}/images/message_ph01.png?v=906" width="387" height="97" /></td>
+      <td><img src="http://{IMG_URL}/sites/{SITE}/images/message_ph01.png?v=907" width="387" height="97" /></td>
     </tr>
     <tr>
       <td class="msg_text" valign="top"></td>
@@ -74,16 +74,20 @@ $("#LoginAutonumImg").click(function(){
 <form name="form2" id="form2" method="get" action="../../app/logout.php">
 <div class="login-bg" id="helpbox1" >
 	<div class="login-bg-con">  
+    
 		<div class="bottombg-2-in">
+        
 			<div class="bottom-in-txt1">帳號：<span>{USERNAME}</span></div>
-		        <div class="bottom-in-txt1">餘額：<span  id="credit" >{CREDIT}</span></div>
-			<div class="bottom-in-txt2"><a href="../../app/auction/modify.php">{_MEMBERs47-1}</a></div>
-        	     	<div class="bottom-in-txt2"><a href="../../app/auction/modify-1.php">{_MEMBERs48-1}</a></div>
-       	     		<input type="submit" name="imageField" class="loginbt-in"  value="&nbsp;" />
-        	</div>
+		    <div class="bottom-in-txt1">餘額：<span  id="credit" >{CREDIT}</span></div>
+            <div class="bottom-in-txt2"><a href="javascript:void(0);" onclick="open_window('../../app/credit_store_new/cred.php','pay',1024,768,1);")>{_MEMBERs47-1}</a></div>
+        	<div class="bottom-in-txt2"><a href="../../app/auction/modify.php">{_MEMBERs48-jo888}</a></div>
+       	    <input type="submit" name="imageField" class="loginbt-in"  value="&nbsp;" />
+        </div>
+        
+            
         	<!--<div class="kaihu-btn"><a href="../../app/user/join1.php"><img src="http://{IMG_URL}/sites/{SITE}/images/{LANGX}/kaihu.png" width="145" height="41" /></a></div>-->
         	<div class="kaihu-btn"><a href="javascript:void(0);" onclick="openurl('');"><img src="http://{IMG_URL}/sites/{SITE}/images/{LANGX}/shiwan-in.png" width="145" height="41" /></a></div>
-    	</div>
+	</div>
     	<a class="btm_close" onclick="javascript:closeThisDiv();">關閉視窗區塊</a>
 </div>
 </form>
