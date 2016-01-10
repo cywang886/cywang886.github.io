@@ -1,0 +1,167 @@
+<script src="/js/flash_detect_min.js" type="text/javascript"></script>
+<script src="../../Scripts/swfobject_modified.js" type="text/javascript"></script>
+<style>
+ul, li { margin: 0;padding: 0;list-style: none; }
+
+.msg-scroll { width: 950px;height: 29px; position: relative;  text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+
+.msg-scroll ul { position: absolute; }
+.msg-scroll li { height: 29px;padding: 5px 0px 5px 0px; }
+.spclick { cursor:pointer; }
+</style>
+
+<div class="header_bg"><div class="header">
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="1000" height="120" >
+    
+    <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1000" height="120">
+      <param name="movie" value="//{IMG_URL}/sites/{SITE}/images/top-banner.swf?v=912" />
+      <param name="quality" value="high" />
+      <param name="wmode" value="opaque" />
+      <param name="swfversion" value="15.0.0.0" />
+      <!-- 此 param 標籤會提示使用 Flash Player 6.0 r65 和更新版本的使用者下載最新版本的 Flash Player。如果您不想讓使用者看到這項提示，請將其刪除。 -->
+      <param name="expressinstall" value="../Scripts/expressInstall.swf" />
+      <!-- 下一個物件標籤僅供非 IE 瀏覽器使用。因此，請使用 IECC 將其自 IE 隱藏。 -->
+      <!--[if !IE]>-->
+      <object type="application/x-shockwave-flash" data="//{IMG_URL}/sites/{SITE}/images/top-banner.swf?v=912" width="1000" height="120">
+        <!--<![endif]-->
+        <param name="quality" value="high" />
+        <param name="wmode" value="opaque" />
+        <param name="swfversion" value="15.0.0.0" />
+        <param name="expressinstall" value="../Scripts/expressInstall.swf" />
+        <!-- 瀏覽器會為使用 Flash Player 6.0 和更早版本的使用者顯示下列替代內容。 -->
+        <div>
+          <h4>這個頁面上的內容需要較新版本的 Adobe Flash Player。</h4>
+          <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="取得 Adobe Flash Player" width="112" height="33" /></a></p>
+        </div>
+        <!--[if !IE]>-->
+      </object>
+      <!--<![endif]-->
+    </object>
+    </td>
+  </tr>
+  <tr>
+    <td class="menu_bk">
+    <div id="nav1">
+        <ul id="nav11" class="nav_h">
+          <li class="first"><a href="../../app/index.php">首頁</a></li>
+          <li class="menuAction1013-1"><a data-fancybox-type="iframe" class="fancyboxIframe" href="#" onclick="openurl2('7','{CID}',1);"><img src="//{IMG_URL}/sites/{SITE}/images/all/menuAction1027-1.gif" width="79" height="39" /></a></li>
+          <li><a data-fancybox-type="iframe" class="fancyboxIframe" href="#" onclick="openurl2('1_1','{CID}',2);">真人遊戲</a></li>
+          <li><a data-fancybox-type="iframe" class="fancyboxIframe" href="#" onclick="openurl2('8','{CID}',2);">賓果</a></li>
+          <li><a data-fancybox-type="iframe" class="fancyboxIframe" href="#" onclick="openurl2('3_3','{CID}',2);">電子遊戲</a></li>
+          <li><a href="javascript:void(0);" onclick="{PAY_URL}">儲值專區</a></li>
+          <li><a href="{MEM_URL}">會員專區</a></li>
+          <li><a data-fancybox-type="iframe" class="fancyboxIframe" href="../../app/notice.php">公告</a></li>
+          <!-- START BLOCK : AUCTION -->
+          <li id="id_auction"><a href="../../app/auction/modify.php?v=201411021520">積點兌換</a></li>
+          <!-- END BLOCK : AUCTION -->
+          <li class="menuAction1013-1"><a href="../../app/page.php?page=preferential"><img src="//{IMG_URL}/sites/{SITE}/images/all/menuAction-1027.gif" width="79" height="39" /></a></li>
+          <!-- START BLOCK : GAME -->
+          <li id="id_game"><a onclick="openurl('','');">一般大廳</a></li>
+          <!--li id="id_game"><a onclick="openurl('',1);">豪華大廳</a></li-->
+          <script type="text/javascript">
+		function openurl(s,w){
+			var gurl = '../../app/lobby.php?ss='+s+'&w='+w;
+			var son_win = open_window(gurl,'game',1024,768,1);
+			if(son_win != null && son_win.open){
+			}else{
+				alert('{_OpenWindowAlert}');
+				location.replace(gurl);
+			}
+		}
+	  </script>
+          <!-- END BLOCK : GAME -->
+        </ul>
+    </div>
+    </td>
+  </tr>
+</table>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="32" valign="top"><img src="//{IMG_URL}/sites/{SITE}/images/header_msg.gif" width="32" height="29" /></td>
+    <td class="run"><a href="../../app/history_msg.php">
+    	<div class="msg-scroll"><ul>
+        <!-- START BLOCK : MSG -->
+        <li>{MARQUEE}</li>
+        <!-- END BLOCK : MSG -->
+        </ul></div>
+    </a></td>
+  </tr>
+</table>
+</div></div>
+<div id="helpbox" style="display:none;position:absolute;top:120px;right:40px;z-index:200;">
+  <a href="http://tb.53kf.com/company.php?arg=10086367&style=1" target="_new"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_services.png" width="150" height="229" /></a><br />
+  <a class="group1" href="//{IMG_URL}/sites/{SITE}/images/{LANGX}/QRcode_line.jpg" target="_blank"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_services_line-1.png" class="spclick" border="0" onmouseover="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_services_line-over-1.png'" onmouseout="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_services_line-1.png'" /></a>
+  <a onClick="javascript:closeThisDiv();" class="floatingclose">關閉視窗區塊</a>
+</div>
+<script type="text/javascript">
+if(FlashDetect.installed){
+	$('#topflash').show();
+}else{
+	$('#topflash').hide();
+}
+$(function(){
+	var news = $('.msg-scroll ul'), scrollHeight = news.find('li').outerHeight(true), scrollSpeed = 600, fadeInSpeed = 600, timer, speed = 3000;
+	function newsScroll(){
+		news.animate({
+			top: scrollHeight + 'px'
+		}, scrollSpeed, function(){
+			var last = news.find('li:last');
+			last.clone().hide().prependTo(news).fadeIn(fadeInSpeed, function(){
+				timer = setTimeout(newsScroll, speed);
+			});
+			news.css('top', 0);
+			last.remove();
+		});
+	}
+	timer = setTimeout(newsScroll, speed);
+});
+var lastScrollY = 0;
+function floathelp(){
+	var diffY;
+	if(document.documentElement && document.documentElement.scrollTop){
+		diffY = document.documentElement.scrollTop;
+	}else if (document.body){
+		diffY = document.body.scrollTop;
+	}
+	var obj = document.getElementById("helpbox");
+	var percent = 0.1 * (diffY - lastScrollY);
+	if(percent > 0) percent = Math.ceil(percent);
+	else percent = Math.floor(percent);
+	obj.style.top = parseInt(obj.style.top) + percent + "px";
+	lastScrollY = lastScrollY + percent;
+}
+var heart_o = self.setInterval("floathelp()", 50);
+document.getElementById('helpbox').style.display='block';
+
+function openurl2(s, cid, f){
+	if(cid == "" || cid == 0){
+		if(f == 1){	  
+			alert('{_OpenWindowAlert2}');
+		}else if(f == 2){	  
+			if(s == 8)		window.open("http://lobby.sj77.net/app/rule.php?agid=9813&langx=zh-tw&page=8_1", '_blank');
+			else if(s == "3_3")	window.open("http://lobby.sj77.net/app/rule.php?agid=9813&langx=zh-tw&page=3_17_326", '_blank');
+			else			window.open("http://lobby.sj77.net/app/rule.php?agid=9813&langx=zh-tw&page="+s, '_blank');
+		}else{		
+			document.getElementById("wFrame").src = "/app/testplay.php?into="+s;
+		}
+	}else{
+		var gurl = '../../app/lobby.php?ss='+s;
+		var son_win = open_window(gurl,'game',1024,768,1);
+		if(son_win != null && son_win.open){
+		}else{
+			alert('{_OpenWindowAlert}');
+			location.replace(gurl);
+		}
+	}
+}
+
+</script>
+<script type="text/javascript">
+function closeThisDiv(){
+	var openDiv = document.getElementById('helpbox');
+	openDiv.style.display = 'none';
+}
+swfobject.registerObject("FlashID");
+</script>

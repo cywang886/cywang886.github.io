@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+</head>
+
+<body>
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<div class="main">
+<!-- INCLUDE BLOCK : WEB_SERVICE -->
+
+            <div class="page-main clear">
+                <div class="page-main-l fleft">
+                    <div class="nav-block">
+                        <div class="nav-head">
+                            <h2 class="page-title">儲值專區</h2>
+                            <h3 class="page-subtitle">SORED VALUE</h3>
+                        </div>
+                        <div class="nav-container">
+                            <ul class="nav-main">
+                                <li class="active"><div class="nav-main-bar"><a href="../../app/credit_store/cred.php">超商儲值</a></div></li>
+                                <li><div class="nav-main-bar"><a href="../../app/credit_store/atm.php">ATM儲值</a></div></li>
+                                <li><div class="nav-main-bar"><a href="../../app/credit_store/cred_tip.php">儲值條例說明</a></div></li>
+                            </ul>
+                        </div>
+                        <div class="hotgame">
+                            <ul>
+                                <li>
+                                    <img src="../../sites/{SITE}/images/service/ad/hotgame_01.gif" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-main-r fright">
+                    <div class="page-header profile">
+                        <div class="service-title"><span class="icon-service is04"></span><span>儲值</span></div>
+                    </div>
+                    <div class="page-content b">
+
+      <table border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+        <tr>
+          <td align="center"><p></p>
+            <img src="{PICTURE_PATH}" width="600" height="135" /><br /><br />
+              <table width="570" border="0" align="center" cellpadding="3" cellspacing="1" class="main_table_line">
+                <tr>
+                  <td width="100" align="center" class="main_table_tit_1">儲值序號</td>
+                  <td bgcolor="#FFFFFF">{ORDERID}</td>
+                </tr>
+                <tr>
+                  <td width="100" align="center" class="main_table_tit_1">消費金額</td>
+                  <td bgcolor="#FFFFFF">{CASH}</td>
+                </tr>
+                <tr>
+                  <td align="center" class="main_table_tit_1">{POINTMSGN}</td>
+                  <td bgcolor="#FFFFFF">{POINTMSGV}</td>
+                </tr>
+              </table>
+            <p><a href="../../app/index.php"><img src="../../sites/{SITE}/images/{LANGX}/btn_start_game.png" width="92" height="38" border="0" /></a></p>
+          </td>
+        </tr>
+      </table>
+
+                    </div>
+                </div>
+            </div>
+            <div class="page-command"></div>
+
+</div>
+<!-- INCLUDE BLOCK : WEB_FOOTER -->
+</body>
+</html>

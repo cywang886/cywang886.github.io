@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{TITLE}</title>
+<link href="//{IMG_URL}/sites/{SITE}/style/mem_rule.css" rel="stylesheet" type="text/css" />
+<script src="/js/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+<!--table border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="//{IMG_URL}/sites/{SITE}/images/rule_ph011.jpg" width="258" height="87" /></td>
+    <td><img src="//{IMG_URL}/sites/{SITE}/images/rule_ph012.jpg" width="217" height="87" /></td>
+    <td><img src="//{IMG_URL}/sites/{SITE}/images/rule_ph013.jpg" width="238" height="87" /></td>
+    <td><img src="//{IMG_URL}/sites/{SITE}/images/rule_ph014.jpg" width="237" height="87" /></td>
+  </tr>
+</table-->
+<table border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#0f0f0f">
+  <tr valign="top"><td>
+    <!-- START BLOCK : Sid_Data -->
+    <div id="menu" class="menu_bk">
+     <div class="main_title_subject-{N} menu_head splink">{SID_NAME}</div>
+     <div style="display:{NONE};" class="menu_link">
+     <table width="258" border="0" cellspacing="0" cellpadding="0">
+      <!-- START BLOCK : RData -->
+      <tr><td class="rule_title{UP}" onClick="get_rule('../tpl/{LANGX}/rule_{PNAME}.html');" style="cursor:pointer">{GNAME}</td></tr>
+      <!-- END BLOCK : RData -->
+     </table>
+    </div></div>
+    <!-- END BLOCK : Sid_Data -->
+
+    <img src="//{IMG_URL}/sites/{SITE}/images/rule_ph031.jpg" width="258" height="97" /></td>
+    <td width="694"><div id="show_rule"></div></td>
+  </tr>
+</table>
+<iframe name="iframe1" id="iframe1" frameborder="0" width="0" height="0" border="0" src=""></iframe>
+<p>&nbsp; </p>
+<p>&nbsp; </p>
+
+<script language="JavaScript">
+$(document).ready(function(){
+	$(".menu_head").click(function(){
+		var pt = $(this).next('.menu_link');
+		if(pt.css('display') == "none"){
+			$('.menu_head').removeClass('main_title_subject-1').addClass('main_title_subject-2');
+			$('.menu_link').slideUp("slow");
+		}
+		if($(this).hasClass('main_title_subject-2')) $(this).removeClass('main_title_subject-2').addClass('main_title_subject-1');
+		else $(this).removeClass('main_title_subject-1').addClass('main_title_subject-2');
+		pt.slideToggle("slow");
+	});
+	$("[class^=rule_title]").click(function(){
+		$("[class^=rule_title]").removeClass('rule_title_up').addClass('rule_title');
+		if($(this).hasClass('rule_title')) $(this).removeClass('rule_title').addClass('rule_title_up');
+		else $(this).removeClass('rule_title_up').addClass('rule_title');
+	});
+});
+function get_rule(page){
+	document.getElementById("iframe1").src = page;
+}
+get_rule('../tpl/{LANGX}/rule_{PAGE}.html');
+</script>
+</body>
+</html>

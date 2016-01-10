@@ -1,0 +1,81 @@
+<div id="helpbox" class="side-box1">
+	<!--<a class="service" href="http://livesupport.ts5889.com/webchat.php?username=kw777&subject=線上客服" target="_blank"></a>-->
+	<div class="service">
+        <div style="width:128px; height:242px; float:left; display:block; ">
+            <a href="http://tb.53kf.com/company.php?arg=10105973&style=1" target="_new">
+            	<div style="width:128px; height:242px; float:left; display:block; "></div>
+            </a>
+        </div>
+    
+    	<div style="width:128px; height:44px; float:left; display:block; ">
+            <a class="group11" href="../sites/{SITE}/images/wechat.jpg?v=77" >
+                <div style="width:128px; height:44px; float:left; display:block; "></div>
+            </a>
+    	</div>
+        <div style="width:128px; height:44px; float:left; display:block; margin-top:7px;">
+            <a class="group12" href="../sites/{SITE}/images/line.jpg" >
+                <div style="width:128px; height:44px; float:left; display:block; "></div>
+            </a>
+    	</div>
+    </div>
+	<!--
+	<div class="btn-QRcode">
+	    <a class="line">
+	        <img class="QRicon" src="../../sites/{SITE}/images/btn_line.png" />
+	        <img class="QRcode" src="../../sites/{SITE}/images/btn_line_h.jpg" />
+	    </a>
+	</div>
+	<div class="btn-QRcode">
+	    <a class="we-chat">
+	        <img class="QRicon" src="../../sites/{SITE}/images/btn_wechat.png" />
+	        <img class="QRcode" src="../../sites/{SITE}/images/btn_wechat_h.jpg" />
+	    </a>
+	</div>
+	-->
+</div>
+<div class="side-box2">
+	<!--a class="play-fun"></a-->
+</div>
+
+<div class="mq">
+	<div class="mq-icon"></div>
+	<div class="mq-news"><a href="../../app/history_msg.php"><ul>
+	<!-- START BLOCK : MSG -->
+	<li>{MARQUEE}</li>
+	<!-- END BLOCK : MSG -->
+	</ul></a></div>
+</div>
+<script type="text/javascript">
+$(function(){
+	var news = $('.mq-news ul'), scrollHeight = news.find('li').outerHeight(true), scrollSpeed = 600, fadeInSpeed = 600, timer, speed = 3000;
+	function newsScroll(){
+		news.animate({
+			top: scrollHeight + 'px'
+		}, scrollSpeed, function(){
+			var last = news.find('li:last');
+			last.clone().hide().prependTo(news).fadeIn(fadeInSpeed, function(){
+				timer = setTimeout(newsScroll, speed);
+			});
+			news.css('top', 0);
+			last.remove();
+		});
+	}
+	timer = setTimeout(newsScroll, speed);
+});
+var lastScrollY = 0;
+function floathelp(){
+	var diffY;
+	if(document.documentElement && document.documentElement.scrollTop){
+		diffY = document.documentElement.scrollTop;
+	}else if (document.body){
+		diffY = document.body.scrollTop;
+	}
+	var percent = 0.1 * (diffY - lastScrollY);
+	if(percent > 0) percent = Math.ceil(percent);
+	else percent = Math.floor(percent);
+
+	$("#helpbox").css('top',parseInt($("#helpbox").css('top')) + percent + "px");
+	lastScrollY = lastScrollY + percent;
+}
+var heart_o = self.setInterval("floathelp()", 50);
+</script>

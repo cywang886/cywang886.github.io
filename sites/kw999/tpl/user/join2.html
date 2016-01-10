@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+</head>
+
+<body>
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<div class="main">
+<!-- INCLUDE BLOCK : WEB_SERVICE -->
+
+    <div class="page-main clear">
+        <div class="page-main-l fleft">
+            <div class="nav-block">
+                <div class="nav-head">
+                    <h2 class="page-title">加入會員</h2>
+                    <h3 class="page-subtitle">JOIN</h3>
+                </div>
+                <div class="step_main">
+                    <div class="step_label">
+                        <span class="step_num">01</span>
+                        <span class="step_text">閱讀條款</span>
+                    </div>
+                    <div class="step_label active">
+                        <span class="step_num">02</span>
+                        <span class="step_text">填寫基本資料</span>
+                    </div>
+                    <div class="step_label">
+                        <span class="step_num">03</span>
+                        <span class="step_text">手機認證</span>
+                    </div>
+                    <div class="step_label">
+                        <span class="step_num">04</span>
+                        <span class="step_text">申請成功</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-main-r fright">
+            <div class="page-main-r fright">
+
+            <form name="newform" action="join3.php" method="post" target="gdFrame">
+                <input type="hidden" name="act" value="add">
+                <input type="hidden" id="affid" name="ud[affid]" value="">
+                <div class="page-content b jn">
+                    <div class="teach-header">
+                        <h2 class="teach-tile">加入凱沃娛樂城<span class="tip02">{_NewNotes}</span></h2>
+                    </div>
+                    <div class="line"></div>
+                    <div class="regist-form">
+                        <div class="ib">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>{_Username} : {_*}</th>
+                                        <td><input name="ud[username]" value="" type="text" size="12" maxlength="12" onkeypress="return ChkKeyCode('L',event);" onblur="chkUsername(this.value);"></td>
+                                        <td class="color_1">{_UsernameNotes}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>{_Passwd} : {_*}</th>
+                                        <td><input name="ud[pwd]" id="pwd" value="" type="password" size="12" maxlength="12" onkeypress="return ChkKeyCode('L',event);" onblur="chkPwd1(this.value);"></td>
+                                        <td class="color_1">{_PwdNotes}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>{_ChkPwd} : {_*}</th>
+                                        <td><input name="ud[chkpwd]" value="" type="password" size="12" maxlength="12" onkeypress="return ChkKeyCode('L',event);" onblur="chkPwd2($('#pwd').val(), this.value);"></td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <th>{_FirstName} : {_*}</th>
+                                    <td><input name="ud[firstname]" value="" type="text" size="15" maxlength="20" onkeypress="return ChkKeyCode('L',event);"></td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <th>{_LastName} : {_*}</th>
+                                    <td><input name="ud[lastname]" value="" type="text" size="15" maxlength="20" onkeypress="return ChkKeyCode('L',event);"></td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <th>{_Gender} : {_*}</th>
+                                    <td>
+                                        <input type="radio" name="ud[gender]" value="M" checked> {_Gender_M} &nbsp; &nbsp;
+                                        <input type="radio" name="ud[gender]" value="W"> {_Gender_W}
+                                    </td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <th>{_MobileTel} : {_*}</th>
+                                    <td><input type="text" name="ud[mobiletel]" value="" size="12" maxlength="12" onkeypress="return ChkKeyCode('P',event);"></td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                
+                                <tr>
+
+            <td>{_UpId} : </td>
+
+            <td><input name="ud[agacc]" value="{AGACC}" type="hidden" >{AGACC} </td>
+            <td>&nbsp</td>
+          </tr>
+                                <tr>
+                                    <th>{_Verification} : {_*}</th>
+                                    <td><input type="text" name="ud[verification]" value="" size="4" maxlength="4" onkeypress="return ChkKeyCode('+I',event);"></td>
+                                    <td><img src="verification.php" align="absmiddle"></td>
+                                </tr>
+                                <tr><td colspan="3" style="color:red;">{_SignUpMemo}</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="control">
+                        <input class="za_button btn-form" value="{_Reset}" type="reset">
+                        <input class="za_button btn-form br" value="{_Sure}" type="submit">
+                    </div>
+                </div>
+            </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- INCLUDE BLOCK : WEB_FOOTER -->
+<iframe name="gdFrame" id="gdFrame" frameborder="0" width="0" height="0" border="0" src=""></iframe>
+<script language="javascript">
+function chkUsername(username){
+	if(username.length < 6 || username.length > 12){ alert("{_Eor_UserName6}"); return false; }
+	else{ return true; }
+}
+function chkPwd1(pwd){
+	if(pwd.length < 6 || pwd.length > 12){ alert("{_Eor_Pwd6}"); return false; }
+	else{ return true; }
+}
+function chkPwd2(pwd, chkpwd){
+	if(pwd != chkpwd){ alert("{_Eor_Pwd2}"); return false; }
+	else{ return true; }
+}
+$('#affid').val(top.putid);
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+<style>
+.service-table input[type="text"]{
+	width:200px;
+	height:30px;
+	color:#333;
+	border:1px solid #e3e3e3;
+	border-radius:0;
+	padding:3px;
+	margin:0 5px 0 0;
+}
+.service-table input[type="submit"]{
+	background:#999;
+	border:0;
+}
+.service-table input[type="submit"]:hover{
+	background:#333;
+}
+</style>
+</head>
+
+<body>
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<div class="main">
+<!-- INCLUDE BLOCK : WEB_SERVICE -->
+    <div class="page-main clear">
+        <div class="page-main-l fleft">
+            <div class="nav-block">
+                <div class="nav-head">
+                    <h2 class="page-title">社群登入</h2>
+                    <h3 class="page-subtitle">LOGIN</h3>
+                </div>
+                <div class="hotgame">
+                    <ul>
+                        <li>
+                            <img src="../../sites/{SITE}/images/service/ad/hotgame_01.gif" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page-main-r fright">
+            <div class="page-header change">
+                <div class="service-title"><span class="icon-service is03"></span><span>請先建立您的基本資料：</span></div>
+            </div>
+            <div class="page-content b">
+                   <div class="member-header clear">
+                        <div class="logo90 fleft"></div>
+                        <div class="page-content-head">
+                               輸入手機後請按「發送手機驗證碼」，您將會收到一組驗證碼，<br>若驗證不過，將無法開通您的帳號，所以請務必正確輸入您的手機號碼，謝謝!!
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="content">
+                        <div class="page-form">
+		            <form action="" method="post" name="form1" id="form1">
+		              <input type="hidden" name="act" value="new">
+		              <input type="hidden" name="ud[username]" value="{USERNAME}">
+		              <input type="hidden" name="ud[email]" value="{EMAIL}">
+		              <table class="service-table">
+				<tr>
+				    <th>{_FirstName}</th>
+				    <td><input name="ud[firstname]" value="{FIRSTNAME}" type="text" size="12" maxlength="20" onKeyPress="return ChkKeyCode('L',event);">{_*}</td>
+				</tr>
+		                <tr>
+		                    <th>{_LastName}</th>
+		                    <td><input name="ud[lastname]" value="{LASTNAME}" type="text" size="12" maxlength="20" onKeyPress="return ChkKeyCode('L',event);">{_*}</td>
+		                </tr>
+		                <tr>
+		                    <th>{_Gender}</th>
+		                    <td class="rgroup"><input type="radio" name="ud[gender]" value="M" {GENDER_M}>{_Gender_M} &nbsp; &nbsp; <input type="radio" name="ud[gender]" value="W" {GENDER_W}>{_Gender_W}{_*}</td>
+		                </tr>
+		                <tr>
+		                    <th>{_MobileTel}</th>
+		                    <td><input id="mobiletel" name="ud[mobiletel]" type="text" value="{MOBILETEL}" size="12" onKeyPress="return ChkKeyCode('P',event);"><input type="button" value="{_SendPhoneCode}" onclick="GetCode();">{_*}</td>
+		                </tr>
+		                <tr>
+		                    <th>{_SendCode} : </th>
+		                    <td><input name="ud[verify]" type="text" value="" onkeypress="return ChkKeyCode('+I',event);" />{_*}</td>
+		                </tr>
+		                <tr class="no-style">
+		                    <td colspan="2">
+		                        <div class="control">
+		                            <input type="submit" class="za_button btn-form" value="{_Sure}" />
+		                        </div>
+		                    </td>
+		                </tr>
+		            </table>
+		          </form>
+		          <iframe id="SmsFrame" src="" width="0" height="0" border="0" frameborder="0"></iframe>
+                        </div>
+                    </div>
+            </div>
+            <div class="page-command"></div>
+        </div>
+    </div>
+</div>
+<!-- INCLUDE BLOCK : WEB_FOOTER -->
+
+<script language="javascript">
+function GetCode(){
+	var fm = document.getElementById('form1');
+	if(fm.mobiletel.value == "") alert("{_InputT}「{_InputNewMobile}」");
+	else $("#SmsFrame").attr("src", "smscode.php?mobiletel="+fm.mobiletel.value);
+}
+</script>
+</body>
+</html>

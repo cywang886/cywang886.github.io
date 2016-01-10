@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+<style>
+th,td{ padding:10px; }
+.regist-form{ margin-top:20px; }
+.page-content.jn{ padding-left:13px; }
+</style>
+</head>
+
+<body>
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<div class="main">
+<!-- INCLUDE BLOCK : WEB_SERVICE -->
+
+    <div class="page-main clear">
+        <div class="page-main-l fleft">
+            <div class="nav-block">
+                <div class="nav-head">
+                    <h2 class="page-title">加入會員</h2>
+                    <h3 class="page-subtitle">JOIN</h3>
+                </div>
+                <div class="step_main">
+                    <div class="step_label">
+                        <span class="step_num">01</span>
+                        <span class="step_text">閱讀條款</span>
+                    </div>
+                    <div class="step_label">
+                        <span class="step_num">02</span>
+                        <span class="step_text">填寫基本資料</span>
+                    </div>
+                    <div class="step_label active">
+                        <span class="step_num">03</span>
+                        <span class="step_text">手機認證</span>
+                    </div>
+                    <div class="step_label">
+                        <span class="step_num">04</span>
+                        <span class="step_text">申請成功</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-main-r fright">
+            <div class="page-main-r fright">
+                <div class="page-content b jn">
+                    <div class="teach-header">
+                        <h2 class="teach-tile">{_join3_title}</span></h2>
+                    </div>
+                    <div class="line"></div>
+                    <div class="regist-form">
+                        <div class="ib">
+                            <table width="100%" style="margin-bottom:30px;">
+                                <tr>
+                                    <th width="20%">{_Username} : </th>
+                                    <td>{USERNAME}</td>
+                                </tr>
+                                <tr>
+                                    <th>{_Gender} : </th>
+                                    <td>{GENDER}</td>
+                                </tr>
+                                <tr>
+                                    <th>{_FirstName} :</th>
+                                    <td>{FIRSTNAME}</td>
+                                </tr>
+                                <tr>
+                                    <th>{_LastName} : </th>
+                                    <td>{LASTNAME}</td>
+                                </tr>
+                                <tr>
+                                    <th>{_MobileTel} :</th>
+                                    <td>{MOBILETEL}</td>
+                                </tr>
+                                <tr>
+                                    <th>{_join3_phone1} :</th>
+                                    <td> <b>{MOBILETEL}</b> , {_join3_phone2}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="padding-bottom:15px;"><input type="button" name="sendcode" id="SendCode" value="{_SendPhoneCode}" />&nbsp; &nbsp; &nbsp;<input type="button" name="CANCEL" value="{_Back}" onclick="window.history.back();" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="padding-bottom:15px;">{_join3_memo1}<br>{_join3_memo2}<br>{_join3_memo3}<br>{_join3_memo4}</td>
+                                </tr>
+                                <tr id="sms_code" style="display:{SNONE};" colspan="2">
+                		    <td><strong>{_SendCode} :</strong>
+                		      <form action="join4.php" method="post" name="newform" id="newform">
+                		        <input type="hidden" name="act" value="add" />
+                		        <input type="text" name="smscode" value="" size="12" class="za_text" onkeypress="return ChkKeyCode('+I',event);" />
+                		        <input type="submit" value="{_Sure}" class="za_button" />
+                		      </form>
+                		    </td>
+              			</tr>
+                            </table>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- INCLUDE BLOCK : WEB_FOOTER -->
+<iframe id="SmsFrame" frameborder="0" width="0" height="0" border="0" src=""></iframe>
+<script>
+$("#SendCode").click(function(){
+	$("#SmsFrame").attr("src", "smscode.php");
+	$("#sms_code").css("display","");
+});
+</script>
+</body>
+</html>

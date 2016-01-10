@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+<script language="javascript">
+function AgreeFun(){
+	var Agree = document.getElementById("agree");
+	Agree.checked = (Agree.checked == true) ? false : true;
+	ApplyDisabled();
+}
+function ApplyDisabled(){
+	var Agree = document.getElementById("agree");
+	if(Agree.checked == true) document.getElementById("apply").disabled = false;
+	else document.getElementById("apply").disabled = true;
+}
+</script>
+</head>
+
+<body topmargin="0" leftmargin="0" onload="ApplyDisabled();">
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+  <tr>
+    <td valign="top" class="login_tis" style="display:{WNONE}">
+      <!-- INCLUDE BLOCK : WEB_LOGIN -->
+    </td>
+    <td width="770" valign="top"><br />
+      <table border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/pic_join.jpg" width="300" height="55" /></td>
+        <td><img src="//{IMG_URL}/sites/{SITE}/images/pic.jpg" width="440" height="55" /></td>
+      </tr>
+      </table>
+      <br />
+      <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="center" background="//{IMG_URL}/sites/{SITE}/images/main_btn-bar.jpg"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/join_ph01.jpg" width="540" height="62" /></td>
+        </tr>
+        <tr>
+          <td bgcolor="#000"><br />
+            <table border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><textarea name="textarea" cols="70" rows="25" readonly="readonly" class="za_area">
+	           <!-- INCLUDE BLOCK : CLAUSE -->
+	           </textarea>
+                </td>
+              </tr>
+              <tr><td>&nbsp;</td></tr>
+              <tr>
+                <td align="center"><input id="agree" name="agree" value="Y" type="checkbox" onclick="ApplyDisabled();" />
+                  <span style="cursor:pointer;" onclick="AgreeFun();" class="text-2">{_AgreeRule}</span></td>
+              </tr>
+              <tr><td>&nbsp;</td></tr>
+              <tr>
+                <td align="center"><input id="apply" disabled="disabled" class="za_button" value="{_AccountAdd}" type="button" name="Y" onclick="{URL}" /></td>
+              </tr>
+              <tr><td>&nbsp;</td></tr>
+            </table></td>
+        </tr>
+      </table>
+      <br /></td>
+  </tr>
+</table>
+</body>
+</html>

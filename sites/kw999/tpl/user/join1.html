@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+
+<script language="javascript">
+function AgreeFun(){
+	var Agree = document.getElementById("agree");
+	Agree.checked = (Agree.checked == true) ? false : true;
+	ApplyDisabled();
+}
+function ApplyDisabled(){
+	var Agree = document.getElementById("agree");
+	if(Agree.checked == true) document.getElementById("apply").disabled = false;
+	else document.getElementById("apply").disabled = true;
+}
+</script>
+</head>
+
+<body onload="ApplyDisabled();">
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<div class="main">
+<!-- INCLUDE BLOCK : WEB_SERVICE -->
+
+            <div class="page-main clear">
+                <div class="page-main-l fleft">
+                    <div class="nav-block">
+                        <div class="nav-head">
+                            <h2 class="page-title">加入會員</h2>
+                            <h3 class="page-subtitle">JOIN</h3>
+                        </div>
+                        <div class="step_main">
+                            <div class="step_label active">
+                                <span class="step_num">01</span>
+                                <span class="step_text">閱讀條款</span>
+                            </div>
+                            <div class="step_label">
+                                <span class="step_num">02</span>
+                                <span class="step_text">填寫基本資料</span>
+                            </div>
+                            <div class="step_label">
+                                <span class="step_num">03</span>
+                                <span class="step_text">手機認證</span>
+                            </div>
+                            <div class="step_label">
+                                <span class="step_num">04</span>
+                                <span class="step_text">申請成功</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-main-r fright">
+                    <div class="page-content b jn">
+                        <div class="teach-header">
+                            <h2 class="teach-tile">{TITLE} 註冊會員合約</h2>
+                        </div>
+                        <div class="line"></div>
+                        <div class="join_license">
+                           <!-- INCLUDE BLOCK : CLAUSE -->
+                        </div>
+                        <div class="join_agreement">
+                            <input id="agree" name="agree" value="Y" type="checkbox" onclick="ApplyDisabled();" />
+                            <span class="color_1" style="cursor:pointer;" onclick="AgreeFun();">{_AgreeRule}</span>
+                            <input id="apply" disabled="disabled" class="za_button" value="{_AccountAdd}" type="button" name="Y" onclick="{URL}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- INCLUDE BLOCK : WEB_FOOTER -->
+</body>
+</html>

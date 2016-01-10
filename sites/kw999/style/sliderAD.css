@@ -1,0 +1,115 @@
+@charset "UTF-8";
+/*
+Design By Away
+http://www.dfuns.idv.tw
+*/
+
+.list{ list-style:none; margin:0; padding:0;}
+
+.sliderBox{
+	overflow: hidden;
+	position: relative;
+	margin: auto;
+	background: #b5b5b5;
+    background: -moz-linear-gradient(top, #b5b5b5 13%, #bfbfbf 29%, #e2e2e2 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(13%, #b5b5b5), color-stop(29%, #bfbfbf), color-stop(100%, #e2e2e2));
+    background: -webkit-linear-gradient(top, #b5b5b5 13%, #bfbfbf 29%, #e2e2e2 100%);
+    background: -o-linear-gradient(top, #b5b5b5 13%, #bfbfbf 29%, #e2e2e2 100%);
+    background: -ms-linear-gradient(top, #b5b5b5 13%, #bfbfbf 29%, #e2e2e2 100%);
+    background: linear-gradient(to bottom, #b5b5b5 13%, #bfbfbf 29%, #e2e2e2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b5b5b5', endColorstr='#e2e2e2', GradientType=0);
+    padding: 10px 0;
+	
+}
+.sliderBox h2{ 
+text-shadow:0 0 5px #039; 
+text-align:center; 
+line-height:2.5em; 
+font-size:1.2em; 
+color:#EEE; margin:0; border-radius:10px 10px 0 0;
+}
+
+.slider{
+	width:735px;
+	height:134px;
+	overflow:hidden;
+	margin:auto;
+	position:relative;
+	padding:0 0 10px;
+}
+.slider ul{
+	overflow:hidden;
+	width:12000px;
+	position:absolute;
+	left:0;
+}
+.slider li{
+	float:left;
+	text-align:center;
+	margin-top: 0;
+	margin-right: 5px;
+	margin-bottom: 0;
+	margin-left: 4px;
+	position:relative;
+}
+.slider li > span{
+    color:#FFF;
+  	position:absolute;
+	bottom:3px;
+	left:3px;
+	display: block;
+    background: rgba(0, 0, 0, 0.8);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#cc000000', EndColorStr='#cc000000');
+    width: 230px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+}
+.slider img{
+	width:230px;
+	height:134px;
+}
+.slider a{
+	display:inline-block;
+	overflow:hidden;
+	margin-bottom:5px;
+	padding:3px;
+}
+.slider a:hover{ border-color:#C00; }
+.slider a img{ border:0;}
+
+.status{ text-align:center; margin-top:5px; position:relative\9; *margin-left:435px;}
+.status li{
+	cursor:pointer;
+	background:#FFF;
+	display:inline-block;
+	text-indent:-9999px;
+	border:2px solid #CCC;
+	width:8px;
+	height:8px;
+	border-radius:100%;
+	margin:0 3px;
+*float:left; }
+.status li.now{
+	border-color:#999;
+	background-color: #C00;
+}
+
+.dIcon{
+	text-indent:-9999px;
+	position:absolute;
+	display:block;
+	width: 22px;
+    height: 69px;
+    top: 46px;
+}
+.next{
+	background: url(../images/hot_arrow.png) -24px 0 no-repeat;
+    left: 800px;
+}
+.prev{
+	background: url(../images/hot_arrow.png) 0 0 no-repeat;
+    left: 12px;
+}
+.next:hover{ background-position: -24px -69px;}
+.prev:hover{ background-position: 0 -69px;}

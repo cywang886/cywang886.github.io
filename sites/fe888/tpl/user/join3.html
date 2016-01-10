@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+</head>
+
+<body topmargin="0" leftmargin="0">
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+  <tr>
+    <td valign="top" class="login_tis" style="display:{WNONE}">
+      <!-- INCLUDE BLOCK : WEB_LOGIN -->
+    </td>
+    <td width="770" valign="top"><br />
+      <table border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/pic_join.jpg" width="300" height="55" /></td>
+          <td><img src="//{IMG_URL}/sites/{SITE}/images/pic.jpg" width="440" height="55" /></td>
+        </tr>
+      </table>
+      <br />
+      <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="center" background="//{IMG_URL}/sites/{SITE}/images/main_btn-bar.jpg"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/join_ph03.jpg" width="540" height="62" /></td>
+        </tr>
+        <tr>
+          <td bgcolor="#000"><br />
+            <table width="540" border="0" align="center" cellpadding="5" cellspacing="0" class="text-color">
+            <tr>
+              <td height="27" colspan="4" class="text-6">{_join3_title}
+                <hr /></td>
+            </tr>
+            <tr>
+              <td width="100">{_Username} : </td>
+              <td width="210" >{USERNAME}</td>
+              <td>{_Gender} : </td>
+              <td>{GENDER}</td>
+            </tr>
+            <tr>
+              <td>{_FirstName} : </td>
+              <td>{FIRSTNAME}</td>
+              <td>{_LastName} : </td>
+              <td>{LASTNAME}</td>
+            </tr>
+            <tr>
+              <td>{_MobileTel} : </td>
+              <td colspan="3">{MOBILETEL}</td>
+            </tr>
+          </table>
+            <table width="540" border="0" align="center" cellpadding="5" cellspacing="0" class="text-color">
+              <tr>
+                <td class="text-1">{_join3_phone1} : <b>{MOBILETEL}</b> ,<br />
+                  {_join3_phone2}</td>
+              </tr>
+              <tr>
+                <td align="center"><input type="button" class="za_button" name="sendcode" id="SendCode" value="{_SendPhoneCode}" />
+                  &nbsp; &nbsp; &nbsp;
+                  <input type="button" class="za_button" name="CANCEL" value="{_Back}" onclick="window.history.back();" /></td>
+              </tr>
+              <tr class="text-2">
+                <td><ul>
+                  <li>{_join3_memo1}</li>
+                  <li>{_join3_memo2}</li>
+                  <li>{_join3_memo3}</li>
+                  <li>{_join3_memo4}</li>
+                </ul></td>
+              </tr>
+              <tr id="sms_code" style="display:{SNONE};">
+                <td>{_SendCode} :
+                  <form action="join4.php" method="post" name="newform" id="newform">
+                    <input type="hidden" name="act" value="add" />
+                    <input type="text" name="smscode" value="" size="12" class="za_text" onkeypress="return ChkKeyCode('+I',event);" />
+                    <input type="submit" value="{_Sure}" class="za_button" />
+                  </form></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table>
+    <br /></td>
+  </tr>
+</table>
+
+<!-- bottom -->
+<div class="sj-bottom-bg">
+	<div class="sb-title1">
+    	建議瀏覽器 GOOGLE CHROME  解析度 1024X768  |  版權所有 COPYRIGHT  ©  2014  {TITLE}. CO., LTD. ALL RIGHTS RESERVED
+    </div>
+</div>
+<!-- bottom_end -->
+
+<iframe id="SmsFrame" src="" width="0" height="0" frameborder="0"></iframe>
+
+<script>
+$("#SendCode").click(function(){
+	$("#SmsFrame").attr("src", "smscode.php");
+	$("#sms_code").css("display","");
+});
+</script>
+</body>
+</html>

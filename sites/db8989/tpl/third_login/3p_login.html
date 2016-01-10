@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{TITLE}</title>
+<!-- -->
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+</head>
+
+<body topmargin="0" leftmargin="0">
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="margin-bottom:86px;">
+  <tr>
+    <td valign="top" class="login_tis">
+      <!-- INCLUDE BLOCK : WEB_LOGIN -->
+    </td>
+    <td width="770" height="500" valign="top"><br />
+      <table border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><img src="http://static.sj77.net/images/{LANGX}/pic_social.jpg" width="300" height="55" /></td>
+        <td><img src="http://static.sj77.net/images/pic.jpg" width="440" height="55" /></td>
+      </tr>
+      </table>
+      <p>&nbsp;</p>
+      <table border="0" align="center" cellpadding="15" cellspacing="0">
+        <tr>
+          <td><span onclick="gogo_login('Yahoo');"><img src="http://static.sj77.net/images/social_yahoo_up.png" width="125" height="86" border="0" onmouseover="this.src='http://static.sj77.net/images/social_yahoo_over.png'" onmouseout="this.src='http://static.sj77.net/images/social_yahoo_up.png'" /></span></td>
+          <td><span onclick="gogo_login('facebook');"><img src="http://static.sj77.net/images/social_fb_up.png" width="125" height="86" border="0" onmouseover="this.src='http://static.sj77.net/images/social_fb_over.png'" onmouseout="this.src='http://static.sj77.net/images/social_fb_up.png'" /></span></td>
+          <!--<td><span onclick="gogo_login('Google');"><img src="http://static.sj77.net/images/social_google_up.png" width="125" height="86" border="0" onmouseover="this.src='http://static.sj77.net/images/social_google_over.png'" onmouseout="this.src='http://static.sj77.net/images/social_google_up.png'" /></span></td>-->
+          <td><span onclick="gogo_login('msn');"><img src="http://static.sj77.net/images/social_msn_up.png" width="125" height="86" border="0" onmouseover="this.src='http://static.sj77.net/images/social_msn_over.png'" onmouseout="this.src='http://static.sj77.net/images/social_msn_up.png'" /></span></td>
+        </tr>
+     </table></td>
+  </tr>
+</table>
+
+<!-- INCLUDE BLOCK : WEB_FOOTER -->
+<script language="javascript">
+function gogo_login(tt){
+	top.location = 'third_party_login.php?act=TPL&AuthType='+tt+'&putid='+top.putid;
+}
+</script>
+</body>
+</html>

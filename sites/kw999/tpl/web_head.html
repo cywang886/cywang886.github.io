@@ -1,0 +1,317 @@
+<div id="windows_cover" class="cover"></div>
+
+<header class="header">
+
+        <div class="main">
+
+            <ul id="sti-menu" class="nav clear">
+
+                <li class="active"><a href="../../app/index.php">{_BtnHome}</a></li>
+
+                <li><a href="http://{COMID_WEBURL}/app/rule.php?agid={AGID}&langx={LANGX}" target="_new">{_BtnProducts}</a></li>
+
+                <!--<li><a href="javascript:alert('請與線上客服連繫!');" >{_BtnSoredvalue}</a></li>-->
+                <li><a href="javascript:void(0);" onclick="{PAY_URL}" >{_BtnSoredvalue}</a></li>
+                
+                <li><a href="{MEM_URL}">{_BtnService}</a></li>
+
+				<!-- START BLOCK : AUCTION -->
+                <li><a href="{AUC_URL}">{_BtnBonuspoints}</a></li>
+				<!-- END BLOCK : AUCTION -->
+                <li><a href="../../app/page.php?page=preferential">{_BtnPromotion}</a></li>
+
+            </ul>
+
+            <a class="logo" href="../../app/index.php"></a>
+
+            <a class="logo_gif" href="../../app/index.php"></a>
+
+        </div>
+
+</header>
+
+
+
+<section class="company-main">
+
+<div class="main clear">
+
+<div class="login-box fright clear">
+
+
+
+	<!-- START BLOCK : LoginBlock -->
+
+        <form name="LoginForm" method="post" action="../../app/login.php" onsubmit="return ChkForm();" target="wFrame">
+
+        <div class="login-form fleft" id="tb_login">
+        <input id="LoginUsername" name="username" type="text" placeholder="{_Username}" value="" onkeypress="return ChkKeyCode('L',event);" tabindex="1" />
+        <input id="LoginPwd" name="pwd" type="password" placeholder="{_Passwd}" value="" onkeypress="return ChkKeyCode('L',event);" tabindex="2" />
+        <div class="code">
+
+      <input id="LoginAuthnum" name="authnum" type="text" class="za_text_1" placeholder="{_AuthCode}" value="" onKeyPress="return ChkKeyCode('+I',event);" tabindex="3" />
+
+                <img id="LoginAutonumImg" src="../../app/autonum.php" align="absmiddle" />
+
+            </div>
+
+            <script src="../../js/jquery.defaultvalue.js" type="text/javascript"></script>
+
+            <script type="text/javascript">
+
+                $('#LoginUsername, #LoginPwd, #LoginAuthnum').defaultValue();
+
+                function ChkForm(){
+
+                    if ($("#LoginUsername").val() == "") { alert("{_UsernameNoNull}"); return false; }
+
+                    else if ($("#LoginPwd").val() == "") { alert("{_PwdNoNull}"); return false; }
+
+                    else if ($("#LoginAuthnum").val() == "") { alert("{_ProofNoNull}"); return false; }
+
+                    else { return true; }
+
+                }
+
+            </script>
+
+            <a class="forget" href="../../app/user/forget.php">{_ForgetPwd}</a>
+
+            <a class="join" href="../../app/user/join1.php">{_NewMem}</a><br />
+        </div>
+
+        <div class="login-control fleft">
+
+            <input type="submit" tabindex="4" value="{_Login}" class="login-btn" />
+
+            <!--ul class="social-icon clear">
+
+                <li class="facebook"><a href="../../app/third_login/third_party_login.php?act=TPL&AuthType=facebook">facebook</a></li>
+
+                <li class="google-plus"><a href="../../app/third_login/third_party_login.php?act=TPL&AuthType=Google">goole</a></li>
+
+                <li class="yahoo"><a href="../../app/third_login/third_party_login.php?act=TPL&AuthType=Yahoo">yahoo</a></li>
+
+                <li class="msn"><a href="../../app/third_login/third_party_login.php?act=TPL&AuthType=msn">msn</a></li>
+
+            </ul-->
+
+          <span class="login-form fleft"><a href="javascript:void(0);" onclick="testplay();"><img src="../../sites/{SITE}/images/{LANGX}/btn_testplay.png?v=111" border="0" onmouseover="this.src='../../sites/{SITE}/images/{LANGX}/btn_testplay_over.png?v=111'" onmouseout="this.src='../../sites/{SITE}/images/{LANGX}/btn_testplay.png?v=111'" /></a></span></div>
+
+        </form>
+
+	<iframe name="wFrame" id="wFrame" frameborder="0" border="0" width="0" height="0" src=""></iframe>
+
+
+
+	<div id="div_LoginSuccess" class="page_mask dark" style="display: none; z-index:210;">
+
+		<div id="dialog_forgotpass"  class="dialog color2" style="height:auto;">
+
+	            <div class="dialog_header">
+
+	                <div class="redsilky"></div>
+
+	                <a class="close_btn" title="關閉視窗"></a>
+
+	                <span class="dialog-icon"></span>
+
+	                <span class="dialog-title">溫馨提示</span>
+
+	            </div>
+
+	            <div class="dialog_main">
+
+	                <div class="dialog_content">
+
+	                    <div class="dialog_msg">
+
+	                        <div class="logo90"></div>
+
+	                        <div class="dialog_infoText">
+
+	                           <div class="msg_text"></div>
+
+	                        </div>
+
+	                    </div>
+
+	                </div>
+
+	            </div>
+
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+
+	function testplay(){
+
+		document.getElementById("wFrame").src = "testplay.php";
+
+	}	
+
+	function showDiv_LoginSuccess(txt){
+
+		if(txt == 1) $(".msg_text").html('{_PleaseLogin}');
+
+		else $(".msg_text").html('{_LoginSuccess}<br />{_Welcome} {TITLE}');
+
+
+
+		var obj = document.getElementById("div_LoginSuccess");
+
+		obj.style.display = '';
+
+		div_cover(obj);
+
+		setTimeout("closeDiv_LoginSuccess()",((txt == 1)?5000:3000));
+
+	}
+
+	function closeDiv_LoginSuccess(){
+
+		$("#div_LoginSuccess").css('display','none');
+
+		div_uncover();
+
+		document.location.replace('../../app/index.php?op=1');
+
+	}
+
+	</script>
+
+	<!-- END BLOCK : LoginBlock -->
+
+
+
+	<!-- START BLOCK : UserBlock -->
+
+	<style>
+
+	.logout-label{ background:transparent; border:0; color:#a3a3a3; cursor:pointer; }
+
+	.logout-label:hover{ color:#fff; }
+
+	</style>
+
+	<form name="form2" id="form2" method="post" action="../../app/logout.php">
+
+		<div class="login-form fleft" style="*float:0;color:#fff;">
+
+		{_Username} : {USERNAME}<br />
+		{_Credit} : <span id='credit' class="valueT">{CREDIT}</span><br />
+
+		</div>
+
+		<div class="login-lobby fleft">
+
+		<a href="#" onclick="openurl('');"><img src="../../sites/{SITE}/images/btn_lobby.gif" /></a>
+
+		</div>
+
+		<div class="logout-box arrow-left" style="margin-top:50px;">
+
+		<input type="submit" tabindex="4" value="{_Logout}" class="logout-label" />
+
+		</div>
+
+	</form>
+
+	<script type="text/javascript">
+
+	function openurl(s){
+
+		var gurl = '../../app/lobby.php?ss='+s;
+
+		var son_win = open_window(gurl,'game',1024,768,1);
+
+		if(son_win != null && son_win.open){
+
+		}else{
+
+			alert('{_OpenWindowAlert}');
+
+			location.replace(gurl);
+
+		}
+
+	}
+
+	</script>
+
+	<!-- END BLOCK : UserBlock -->
+
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<script type="text/javascript">
+
+var display_obj;
+
+$(window).resize(function(){ if(display_obj != undefined) div_cover(display_obj); });
+
+function div_cover(obj){
+
+	display_obj = obj;
+
+	if(obj.style.display != "none"){
+
+		var obj = document.getElementById("windows_cover");
+
+		obj.style.display = "block";
+
+		obj.style.height = document.body.clientHeight+"px";
+
+		obj.style.width = document.body.clientWidth+"px";
+
+	}
+
+}
+
+function div_uncover(){
+
+	$("#windows_cover").css('display','none');
+
+}
+
+{OPENLOBBY}
+
+refresh_Quota();
+setInterval("refresh_Quota()",30000);
+function refresh_Quota(){
+	send({ 'ty':'get_quota' });
+}
+function send(da){
+		if ( getCookie("CGUID") =="" ) return false;
+	$.ajax({
+		type: "post",
+		url: "../../app/getcredit.php",
+		data: da,
+		dataType: 'json',
+		success: function(response){
+			$('#credit').text( response['CREDIT'] );
+			//$('#dxb').text( response['DXB'] );
+		}
+	});
+}
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}
+</script>
+

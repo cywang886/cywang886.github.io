@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+</head>
+
+<body topmargin="0" leftmargin="0">
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+  <tr>
+    <td valign="top" class="login_tis" style="display:{WNONE}">
+      <!-- INCLUDE BLOCK : WEB_LOGIN -->
+    </td>
+    <td width="770" valign="top"><br />
+      <table border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/pic_join.jpg" width="300" height="55" /></td>
+          <td><img src="//{IMG_URL}/sites/{SITE}/images/pic.jpg" width="440" height="55" /></td>
+        </tr>
+      </table>
+      <br />
+      <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="center" background="//{IMG_URL}/sites/{SITE}/images/main_btn-bar.jpg"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/join_ph02.jpg" width="540" height="62" /></td>
+        </tr>
+        <tr>
+          <td bgcolor="#000"><br />
+          <form name="newform" action="join3.php" method="post" target="gdFrame">
+          <input type="hidden" name="act" value="add">
+          <table border="0" align="center" cellpadding="0" cellspacing="10" class="text-color">
+          <tr>
+            <td height="27" colspan="2" class="text-6">{_NewNotes}<hr></td>
+          </tr>
+          <tr>
+            <td>{_Username} : {_*}</td>
+            <td><input name="ud[username]" value="" type="text" class="za_text_2" size="12" maxlength="12" onKeyPress="return ChkKeyCode('L',event);" onBlur="chkUsername(this.value);"> <span class="text-2">{_UsernameNotes}</span></td>
+          </tr>
+          <tr>
+            <td>{_Passwd} : {_*}</td>
+            <td><input name="ud[pwd]" id="pwd" value="" type="password" class="za_text_2" size="12" maxlength="12" onKeyPress="return ChkKeyCode('L',event);" onBlur="chkPwd1(this.value);"> <span class="text-2">{_PwdNotes}</span></td>
+          </tr>
+          <tr>
+            <td>{_ChkPwd} : {_*}</td>
+            <td><input name="ud[chkpwd]" value="" type="password" class="za_text_2" size="12" maxlength="12" onKeyPress="return ChkKeyCode('L',event);" onBlur="chkPwd2($('#pwd').val(), this.value);"></td>
+          </tr>
+          <tr>
+            <td>{_FirstName} : {_*}</td>
+            <td><input name="ud[firstname]" value="" type="text" class="za_text_2" size="15" maxlength="20" onKeyPress="return ChkKeyCode('L',event);"></td>
+          </tr>
+          <tr>
+            <td>{_LastName} : {_*}</td>
+            <td><input name="ud[lastname]" value="" type="text" class="za_text_2" size="15" maxlength="20" onKeyPress="return ChkKeyCode('L',event);"></td>
+          </tr>
+          <tr>
+            <td>{_Gender} : </td>
+            <td>
+              <input type="radio" name="ud[gender]" value="M" checked> {_Gender_M} &nbsp; &nbsp;
+              <input type="radio" name="ud[gender]" value="W"> {_Gender_W}
+            </td>
+          </tr>
+          <tr>
+            <td>{_MobileTel} : {_*}</td>
+            <td><input class="za_text_2" type="text" name="ud[mobiletel]" value="" size="12" maxlength="12" onKeyPress="return ChkKeyCode('P',event);"></td>
+          </tr>
+          <tr style="display:none;">
+            <td>{_UpId} : </td>
+            <td><input id="affid" name="ud[affid]" value="{AFFID}" type="text" class="za_text_2" size="12" maxlength="12" {DISABLEUPID}> <span class="text-2">{_NumOnly}</span></td>
+          </tr>
+          <tr>
+            <td>{_Verification} : {_*}</td>
+            <td><img src="verification.php" align="absmiddle"><input class="za_text_2" type="text" name="ud[verification]" value="" size="4" maxlength="4" onKeyPress="return ChkKeyCode('+I',event);"></td>
+          </tr>
+          <tr><td height="27" colspan="2" class="text-6"><hr></td></tr>
+          <tr><td colspan="2" style="color:red;">{_SignUpMemo}</td></tr>
+          <tr>
+            <td colspan="2" align="center">
+              <input class="za_button" value="{_Sure}" type="submit">&nbsp; &nbsp; &nbsp;
+              <input class="za_button" value="{_Reset}" type="reset">
+            </td>
+          </tr>
+        </table>
+        </form>
+       </td>
+        </tr>
+      </table>
+    <br /></td>
+  </tr>
+</table>
+<iframe name="gdFrame" id="gdFrame" frameborder="0" width="0" height="0" border="0" src=""></iframe>
+<script language="javascript">
+function chkUsername(username){
+	if(username.length < 6 || username.length > 12){ alert("{_Eor_UserName6}"); return false; }
+	else{ return true; }
+}
+function chkPwd1(pwd){
+	if(pwd.length < 6 || pwd.length > 12){ alert("{_Eor_Pwd6}"); return false; }
+	else{ return true; }
+}
+function chkPwd2(pwd, chkpwd){
+	if(pwd != chkpwd){ alert("{_Eor_Pwd2}"); return false; }
+	else{ return true; }
+}
+$('#affid').val(top.putid);
+</script>
+</body>
+</html>

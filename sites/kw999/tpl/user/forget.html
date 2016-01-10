@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+<style>
+.service-table input[type="text"]{
+	width:115px;
+	height:30px;
+	color:#333;
+	border:1px solid #999;
+	border-radius:0;
+	padding:3px;
+	margin:0;
+}
+.service-table input[type="submit"]{
+	background: #C00;
+	border:0;
+	padding:10px 0 5px;
+	width:70px;
+	color:#fff;
+	cursor:pointer;
+	margin-right:6px;
+}
+.service-table input[type="submit"]:hover{
+	background:#333;
+}
+</style>
+</head>
+
+<body>
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<div class="main">
+<!-- INCLUDE BLOCK : WEB_SERVICE -->
+<div class="main content-block">
+<div class="page-main clear">
+
+<div class="page-main-l fleft">
+  <div class="nav-block">
+      <div class="nav-head">
+          <h2 class="page-title">忘記密碼</h2>
+          <h3 class="page-subtitle">FORGET PASSWORD</h3>
+      </div>
+  </div>
+</div>
+<div class="page-main-r fright">
+    <div class="page-header change">
+        <div class="service-title"><span class="icon-service is02"></span><span>忘記密碼</span></div>
+    </div>
+    <div class="page-content b">
+      <div class="tip"></div>
+        <div class="content">
+           <table class="service-table">
+           <form name="forgetform" action="" method="post">
+	   <input type="hidden" name="act" value="forget">
+               <tr>
+                   <th>{_InputUsername} :</th>
+                   <td><input type="text" name="username" value="" onkeypress="return ChkKeyCode('L',event);" /></td>
+               </tr>
+               <tr>
+                   <th>{_InputMobileTel} :</th>
+                   <td><input type="text" name="mobiletel" value="" onkeypress="return ChkKeyCode('P',event);" /></td>
+               </tr>
+               <tr class="no-style">
+                   <td colspan="2"><input class="za_button" value="{_Sure}" type="submit"></td>
+               </tr>
+           </form>
+           </table>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+<!-- INCLUDE BLOCK : WEB_FOOTER -->
+</body>
+</html>

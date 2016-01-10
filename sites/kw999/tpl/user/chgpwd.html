@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+<style>
+.service-table input[type="password"]{
+	width:115px;
+	height:30px;
+	color:#333;
+	border:1px solid #999;
+	border-radius:0;
+	padding:3px;
+	margin:0;
+}
+.service-table input[type="submit"],.service-table input[type="reset"]{
+	background: #C00;
+	border:0;
+	padding:10px 0 5px;
+	width:70px;
+	color:#fff;
+	cursor:pointer;
+	margin-right:6px;
+}
+.service-table input[type="submit"]:hover,.service-table input[type="reset"]:hover{
+	background:#333;
+}
+.service-table input[type="reset"]{
+	background: #999;
+}
+</style>
+</head>
+
+<body>
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<div class="main">
+<!-- INCLUDE BLOCK : WEB_SERVICE -->
+
+    <div class="page-main clear">
+        <div class="page-main-l fleft">
+            <div class="nav-block">
+                <div class="nav-head">
+                    <h2 class="page-title">會員專區</h2>
+                    <h3 class="page-subtitle">SERVICE</h3>
+                </div>
+                <div class="member-tag">
+                    <span class="">{USERNAME}</span>
+                </div>
+                <div class="nav-container">
+                    <ul class="nav-main">
+                        <li><div class="nav-main-bar"><a href="../../app/user/info.php">個人資料</a></div></li>
+                        <li class="active"><div class="nav-main-bar"><a href="../../app/user/chgpwd.php">修改密碼</a></div></li>
+                        <li><div class="nav-main-bar"><a href="../../app/user/modify.php">修改資料</a></div></li>
+                        <li><div class="nav-main-bar"><a href="../../app/record/pay.php">記錄總覽</a></div></li>
+                    </ul>
+                </div>
+                <div class="hotgame">
+                    <ul>
+                        <li>
+                            <img src="../../sites/{SITE}/images/service/ad/hotgame_01.gif" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page-main-r fright">
+            <div class="page-header change">
+                <div class="service-title"><span class="icon-service is02"></span><span>修改密碼</span></div>
+            </div>
+            <div class="page-content b">
+                <div class="member-header clear">
+                    <div class="logo90 fleft"></div>
+                    <div class="page-content-head">
+                        <div class="welcome">
+                            <h1>歡迎來到 {TITLE}</h1>
+                            <p>為保障會員使用本網站提供之「{TITLE}」網頁遊戲服務的相關權益，請於註冊登記填寫真實資料，敬請定期更換密碼！</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="tip"></div>
+                <div class="content">
+
+		<table class="service-table">
+		<!-- START BLOCK : chgpwd -->
+		<form action="" method="post" name="pwdform" id="pwdform" class="page-form">
+		  <input type="hidden" name="act" value="chgpwd" />
+		  <tr>
+		      <th>{_OldPwd}:</th>
+		      <td><input type="password" name="oldpwd" value="" onkeypress="return ChkKeyCode('L',event);" /></td>
+		  </tr>
+		  <tr>
+		      <th>{_NewPwd}:</th>
+		      <td><input type="password" name="newpwd" value="" onkeypress="return ChkKeyCode('L',event);" /></td>
+		  </tr>
+		  <tr>
+		      <th>{_ChkPwd}:</th>
+		      <td><input class="za_text" type="password" name="chkpwd" value="" onkeypress="return ChkKeyCode('L',event);" />{_PwdNotes}</td>
+		  </tr>
+		  <tr class="no-style">
+		      <td colspan="2"><input type="submit"  value="{_Sure}" /><input type="reset" class="za_button" /></td>
+		  </tr>
+		</form>
+		<!-- END BLOCK : chgpwd -->
+	        <!-- START BLOCK : Community -->
+	          <tr>
+	            <td class="main_table_tit_1">{_ChgPwdMemo}</td>
+	          </tr>
+	        <!-- END BLOCK : Community -->
+	        </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-command"></div>
+</div>
+<!-- INCLUDE BLOCK : WEB_FOOTER -->
+</body>
+</html>

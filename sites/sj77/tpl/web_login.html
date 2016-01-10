@@ -1,0 +1,356 @@
+<div id="windows_cover" class="cover"></div>
+<!-- START BLOCK : LoginBlock -->
+<form name="LoginForm" method="post" action="../../app/login.php" onsubmit="return ChkForm();" target="wFrame">
+<table id="tb_login" width="210" border="0" cellpadding="0" cellspacing="0">
+  <tr><td height="10"></td></tr>
+  <tr><td><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/login_ph01.png" width="210" height="52" /></td></tr>
+  <tr>
+    <td class="login_bk"><table border="0" align="center" cellpadding="3" cellspacing="0">
+        <tr><td align="left"><input id="LoginUsername" name="username" type="text" class="za_text" placeholder="{_Username}" value="" onKeyPress="return ChkKeyCode('L',event);" size="12" tabindex="1" /></td></tr>
+        <tr align="left"><td><input id="LoginPwd" name="pwd" type="password" class="za_text" placeholder="{_Passwd}" value="" onKeyPress="return ChkKeyCode('L',event);" size="12" tabindex="2" /></td></tr>
+        <tr align="left">
+        	<td valign="top"><input id="LoginAuthnum" onclick="reloadver();" name="authnum" type="text" size="4" maxlength="4" class="za_text_1" placeholder="{_AuthCode}" value="" onKeyPress="return ChkKeyCode('+I',event);" tabindex="3" />
+	<img id="LoginAutonumImg" src="../../app/autonum.php" align="absmiddle" name="LoginAutonumImg" onclick="this.src='../../app/autonum.php?v=' + Math.random();" />
+        	</td>
+		</tr>
+        <tr align="left" style="font-size:12px;"><td>點選驗證碼欄位後，<br/>驗證碼會更新，請注意</td></tr>
+	<script src="/js/jquery.defaultvalue.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	$('#LoginUsername, #LoginPwd, #LoginAuthnum').defaultValue();
+	function ChkForm(){
+		if($("#LoginUsername").val() == ""){ alert("{_UsernameNoNull}"); return false; }
+		else if($("#LoginPwd").val() == ""){ alert("{_PwdNoNull}"); return false; }
+		else if($("#LoginAuthnum").val() == ""){ alert("{_ProofNoNull}"); return false; }
+		else{ return true; }
+	}
+	</script>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="55" align="center" background="//{IMG_URL}/sites/{SITE}/images/login_ph03.png">
+     <input type="image" name="submitimg" src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_login.png" tabindex="4" />
+     <a href="../../app/user/forget.php"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_forget-pwd.png" width="82" height="29" hspace="5" border="0" onmouseover="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_forget-pwd_over.png'" onmouseout="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_forget-pwd.png'" /></a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="http://sj77-168.weebly.com" target="new"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-sport.png?v=901" width="199" height="42" vspace="0" border="0" /></a><br />
+      <a href="javascript:void(0);" onclick="testplay();"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-5-1.gif" width="199" height="42" border="0" onmouseover="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-5-1_over.png'" onmouseout="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-5-1.gif'" /></a>
+      <a href="../../app/user/join1.php"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_registration-1.gif" width="199" height="42" border="0" onmouseover="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_registration_over-1.png'" onmouseout="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_registration-1.gif'" /></a>
+    </td>
+  </tr>
+</table>
+</form>
+<iframe name="wFrame" id="wFrame" frameborder="0" border="0" width="0" height="0" src=""></iframe>
+
+<div id="div_LoginSuccess" style="position:absolute; z-index:210; display:none;">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr><td><img src="//{IMG_URL}/sites/{SITE}/images/message_ph01.png" width="387" height="97" /></td></tr>
+    <tr><td class="msg_text" valign="top"></td></tr>
+  </table>
+</div>
+<script tpye=javascript>
+function reloadver(){
+  var img = '../../app/autonum.php?v=' + Math.random();
+  //document.getElementById("LoginAutonumImg").src = img;
+  $('#LoginAutonumImg').attr('src', img );
+  //document.LoginForm.LoginAutonumImg.src = img;
+  //document.images['LoginAutonumImg'].src = img;
+}
+</script>
+<script type="text/javascript">
+function testplay(){
+	document.getElementById("wFrame").src = "testplay.php";
+}
+function showDiv_LoginSuccess(txt){
+	if(txt == 1) $(".msg_text").html('{_PleaseLogin}');
+	else $(".msg_text").html('{_LoginSuccess}<br />{_Welcome} {TITLE}');
+
+	var obj = document.getElementById("div_LoginSuccess");
+	obj.style.left = (document.body.clientWidth/3)+"px";
+	obj.style.top = (document.body.clientHeight/4)+"px";
+	obj.style.display = '';
+	div_cover(obj);
+	setTimeout("closeDiv_LoginSuccess()",((txt == 1)?4000:3000));
+}
+function closeDiv_LoginSuccess(){
+	$("#div_LoginSuccess").css('display','none');
+	div_uncover();
+	document.location.replace('../../app/index.php?op=1');
+}
+</script>
+<!-- END BLOCK : LoginBlock -->
+
+<!-- START BLOCK : UserBlock -->
+<table id="tb_user" width="210" border="0" cellpadding="0" cellspacing="0">
+<form name="form2" id="form2" method="get" action="../../app/logout.php">
+  <tr><td height="10"></td></tr>
+  <tr>
+    <td><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/login_mem_info.png" width="210" height="52" /></td>
+  </tr>
+  <tr>
+    <td class="login_bk">
+      <table border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="60" align="right" height="22">{_Username} : </td>
+          <td width="100" class="text-1" id="u_name">{USERNAME}</td>
+        </tr>
+        <tr>
+          <td width="60" align="right" height="22">{_Credit} : </td>
+          <td width="100" class="text-1" id="credit">{CREDIT}</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr><td height="55" align="center" background="//{IMG_URL}/sites/{SITE}/images/login_ph03.png"><input type="image" name="imageField" src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_logout.png" /></td></tr>
+</form>
+</table>
+<table width="210" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center">
+    <a href="http://sj77-168.weebly.com" target="new"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-sport.png?v=901" width="199" height="42" vspace="0" border="0" /></a><br />
+    <a href="../../app/page.php?page=teaching_3"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-4.png" width="199" height="42" vspace="0" border="0" onmouseover="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-4_over.png'" onmouseout="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-4.png'" /></a></td>
+  </tr>
+  <tr>
+    <td align="center" class="spclick" onclick="openurl('','');"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_lobby.gif" width="199" height="42" border="0" /></td>
+  </tr>
+  <!--tr>
+    <td align="center" class="spclick" onclick="openurl('',1);"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_lobby-1.gif" width="199" height="42" border="0" /></td>
+  </tr-->
+</table>
+<!-- END BLOCK : UserBlock -->
+
+<table width="210" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center"><a href="../../app/page.php?page=teaching_1"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-1.png" width="199" height="42"  border="0" onmouseover="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-1_over.png'" onmouseout="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-1.png'" /></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="../../app/page.php?page=teaching_2"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-3.png" width="199" height="42"  border="0" onmouseover="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-3_over.png'" onmouseout="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-3.png'" /></a></td>
+  </tr>
+  <!--業績代理先隱藏tr>
+    <td align="center"><a href="javascript:void(0);" onclick="showDiv_AgentMsg();"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-6.png" width="199" height="42"  border="0" onmouseover="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-6_over.png'" onmouseout="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_teach-6.png'" /></a></td>
+  </tr-->
+  <tr>
+    <td align="center"><a href="../../app/page.php?page=teaching_2"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/store_cash.jpg" width="196" height="264" border="0" /></a></td>
+  </tr>
+</table>
+
+
+<!-- 手機遊戲 -->
+
+<link rel="stylesheet" type="text/css" href="//{IMG_URL}/sites/{SITE}/style/colorbox.css?v=930"/>
+<script type="text/javascript" src="/js/jquery.colorbox.js"></script>
+<!--script src="/js/jquery.colorbox.js" type="text/javascript"></script-->
+<script>
+$(document).ready(function(){
+ $(".group1").colorbox({rel:'group1'});
+});
+</script>
+
+<style>
+.android_background{
+	width:196px;
+	height:auto;
+	float:left;
+	background:url('//{IMG_URL}/sites/{SITE}/images/{LANGX}/download_android_1.png') no-repeat;
+	padding-top:62px;
+	margin:0px 0px 0px 5px;
+}	
+.qrcode_Baccarat{
+	width:196px;
+	height:70px;
+	float:left;
+	background:url('//{IMG_URL}/sites/{SITE}/images/{LANGX}/download_android_bk.png') no-repeat;
+}
+.bottom_footer{
+	width:196px;
+	height:67px;
+	float:left;
+	background:url('//{IMG_URL}/sites/{SITE}/images/{LANGX}/bottom_footer.png') no-repeat;
+	background-position:0px -30px;
+}
+.qrcode_00{
+	width:62px;
+	height:70px;
+	float:left;
+	margin:0px 0px 0px 10px;
+}
+.text_type00{
+	width:84px;
+	height:20px;
+	float:left;
+	font-family:"微軟正黑體", Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#FFF;
+	}
+.text_type02{
+	width:40px;
+	height:20px;
+	float:left;
+	font-family:"微軟正黑體", Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+.text_type02 a{
+	color:#FF0;
+	text-decoration:underline;
+	}
+.text_type02 a:hover{
+	color:#0C0;
+	text-decoration:underline;
+	}
+.btn_00{
+	width:124px;
+	height:51px;
+	float:left;
+}
+
+.btn_00 input{
+	background:url('//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_download_up.png?v=901') no-repeat; 
+	width:110px;
+	height:38px;
+	border:none;
+	background-color:transparent;
+	cursor:pointer;
+	text-indent:-9999px;
+	}
+	
+.btn_00 input:hover{
+	background:url('//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_download_over.png?v=901') no-repeat;
+	width:110px;
+	height:38px;
+	border:none;
+	background-color:transparent;
+	}
+
+.jjj{
+	text-indent:-9999px;
+}
+
+.fish-btn{
+	width:49px;
+	height:33px;
+	float:left;
+	display:block;
+	color:#FFF;
+	font-size:13px;
+	font-family:"微軟正黑體",Arial, Helvetica, sans-serif;
+	text-align:center;
+	background-color:#94bc01;
+	margin:0px 4px 0px 0px;
+	}
+</style>
+
+<!-- 手機遊戲任務 -->
+<div class="android_background">
+	<div class="qrcode_Baccarat">
+    	<div class="qrcode_00">
+        <a class="group1" href="//{IMG_URL}/sites/{SITE}/images/{LANGX}/Baccarat.png" title="真人百家樂">
+        <img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/Baccarat.png" width="57" height="57"/></a>
+        </div>
+        <div class="text_type00">真人百家樂</div>
+        <div class="text_type02"><a href="../../app/page.php?page=game_baccarat" target="_blank">說明</a></div>
+        <div class="btn_00"><a href="http://lobby.sj77.net/sites/9/apk/Baccarat.apk"><input name="" type="button" value="直接下載"/>
+        </a></div>
+    </div>
+    <div class="qrcode_Baccarat">
+    	<div class="qrcode_00">
+        <a class="group1" href="//{IMG_URL}/sites/{SITE}/images/{LANGX}/BlackJack21L.png" title="21點">
+        <img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/BlackJack21L.png" width="57" height="57" /></a>
+        </div>
+        <div class="text_type00">21點</div>
+        <div class="text_type02"><a href="../../app/page.php?page=game_blackjack" target="_blank">說明</a></div>
+        <div class="btn_00"><a href="http://lobby.sj77.net/sites/9/apk/BlackJack21L.apk"><input name="" type="button" value="直接下載"/></a></div>
+    </div>
+    <div class="qrcode_Baccarat">
+    	<div class="qrcode_00">
+        <a class="group1" href="//{IMG_URL}/sites/{SITE}/images/{LANGX}/5PKL.png" title="5PK">
+        <img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/5PKL.png" width="57" height="57"/></a>
+        </div>
+        <div class="text_type00">5PK</div>
+        <div class="text_type02"><a href="../../app/page.php?page=game_5PK">說明</a></div>
+        <div class="btn_00"><a href="http://lobby.sj77.net/sites/9/apk/5PKL.apk"><input name="" type="button" value="直接下載" /></a></div>
+    </div>
+    <div class="qrcode_Baccarat">
+    	<div class="qrcode_00">
+        <a class="group1" href="//{IMG_URL}/sites/{SITE}/images/{LANGX}/BaccaratKXM_tw.png" title="凱旋門百家樂">
+        <img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/BaccaratKXM_tw.png" width="57" height="57" /></a>
+        </div>
+        <div class="text_type00" style="font-size:14px;">凱旋門百家樂</div>
+        <div class="text_type02"><a href="../../app/page.php?page=game_kxmbaccarat">說明</a></div>
+        <div class="btn_00"><a href="http://lobby.sj77.net/sites/9/apk/BaccaratKXM_tw.apk"><input name="" type="button" value="直接下載"/></a></div>
+    </div>
+    <div class="bottom_footer">
+    	<div class="qrcode_00">
+        <a class="group1" href="//{IMG_URL}/sites/{SITE}/images/{LANGX}/QRCODE9.jpg?v=902" title="千炮捕魚">
+        <img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/QRCODE9.jpg?v=902" width="57" height="57" /></a>
+        </div>
+        <div class="text_type00">千炮捕魚</div>
+        <div class="text_type02"><a href="../../app/page.php?page=game_fish" target="_blank">說明</a></div>
+        <div class="btn_00" style="padding-top:4px; height:47px;">
+        	<a href="http://lobby.sj77.net/sites/9/apk/fish9.apk">
+            	<div class="fish-btn">手機版<br/>下載</div>
+            </a>
+            
+            <a href="http://lobby.sj77.net/sites/9/apk/fish9.zip ">
+            	<div class="fish-btn">電腦版<br/>下載</div>
+            </a>
+        </div>
+    </div>
+
+
+</div>
+<!-- 手機遊戲任務END -->
+
+<div id="div_AgentMsg" style="position:absolute; z-index:210; display:none;">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr><td><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/service.png" width="298" height="240" /></td></tr>
+  </table>
+</div>
+<script type="text/javascript">
+var display_obj;
+$(window).resize(function(){ if(display_obj != undefined) div_cover(display_obj); });
+function div_cover(obj){
+	display_obj = obj;
+	if(obj.style.display != "none"){
+		var obj = document.getElementById("windows_cover");
+		obj.style.display = "block";
+		obj.style.height = document.body.clientHeight+"px";
+		obj.style.width = document.body.clientWidth+"px";
+	}
+}
+function div_uncover(){
+	$("#windows_cover").css('display','none');
+}
+{OPENLOBBY}
+
+function showDiv_AgentMsg(){
+	var obj = document.getElementById("div_AgentMsg");
+	obj.style.left = (document.body.clientWidth/3)+"px";
+	obj.style.top = (document.body.clientHeight/4)+"px";
+	obj.style.display = '';
+	div_cover(obj);
+	setTimeout("closeDiv_AgentMsg()",5000);
+}
+function closeDiv_AgentMsg(){
+	$("#div_AgentMsg").css('display','none');
+	div_uncover();
+}
+
+refresh_Quota();
+setInterval("refresh_Quota()",30000);
+function refresh_Quota(){
+	send({ 'ty':'get_quota' });
+}
+function send(da){
+	$.ajax({
+		type: "post",
+		url: "../../app/getcredit.php",
+		data: da,
+		dataType: 'json',
+		success: function(response){
+			$('#credit').text( response['CREDIT'] );
+			//$('#dxb').text( response['DXB'] );
+		}
+	});
+}
+</script>

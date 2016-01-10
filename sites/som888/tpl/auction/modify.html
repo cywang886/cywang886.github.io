@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>{TITLE}</title>
+
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+
+</head>
+
+
+
+<body topmargin="0" leftmargin="0">
+
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="margin-bottom:86px;">
+
+  <tr>
+
+    <td valign="top" class="login_tis">
+
+      <!-- INCLUDE BLOCK : WEB_LOGIN -->
+
+    </td>
+
+    <td width="770" valign="top"><br />
+
+      <table border="0" align="center" cellpadding="0" cellspacing="0">
+
+        <tr>
+
+          <td><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/pic_bonus.jpg" width="300" height="55" /></td>
+
+          <td><img src="//{IMG_URL}/sites/{SITE}/images/pic.jpg" width="440" height="55" /></td>
+
+        </tr>
+
+      </table>
+
+      <br>
+
+      <table width="720" border="0" align="center" cellpadding="0" cellspacing="0">
+
+        <tr>
+
+          <td><table border="0" cellpadding="0" cellspacing="0">
+
+            <tr>
+
+              <td><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_bonus_down.jpg" width="108" height="33" hspace="5" border="0" /></td>
+
+              <td><a href="list.php"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_record_up.jpg" width="108" height="33" border="0" onmouseover="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_record_down.jpg'" onmouseout="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_record_up.jpg'" /></a></td>
+
+            </tr>
+
+          </table></td>
+
+        </tr>
+
+        <tr>
+
+          <td valign="top" class="main_line"><br />
+
+            <table width="500" border="0" align="center" cellpadding="0" cellspacing="0">
+
+              <tr>
+
+                <td width="1%"><img src="//{IMG_URL}/sites/{SITE}/images/main_border1.jpg" width="18" height="18" /></td>
+
+                <td width="98%" background="//{IMG_URL}/sites/{SITE}/images/main_border2.jpg" style="background-repeat:repeat-x">&nbsp;</td>
+
+                <td width="1%"><img src="//{IMG_URL}/sites/{SITE}/images/main_border3.jpg" width="18" height="18" /></td>
+
+              </tr>
+
+              <tr>
+
+                <td background="//{IMG_URL}/sites/{SITE}/images/main_border4.jpg" style="background-repeat:repeat-y">&nbsp;</td>
+
+                <td><table width="100%" border="0" align="center" cellpadding="5" cellspacing="1" class="main_table_line">
+
+                  <iframe src="" name="wFrame" width="0" height="0" frameborder="0" id="wFrame" border="0"></iframe>
+
+                  <form action="" method="post" name="editform" target="wFrame" id="editform">
+
+                    <input type="hidden" name="act" value="new" />
+
+                    <tr bgcolor="#FFFFFF">
+
+                      <td align="right" class="main_table_tit_1">{_Point} : </td>
+
+                      <td><input type="text" name="amount" value="0" class="za_text_2" size="10" onkeypress="return ChkKeyCode('+I',event);" /></td>
+
+                    </tr>
+
+                    <tr bgcolor="#666666">
+
+                      <td colspan="2" class="text-8">{_BankData}</td>
+
+                      </tr>
+
+                    <tr bgcolor="#FFFFFF">
+
+                      <td align="right" class="main_table_tit_1">{_BankCode} : </td>
+
+                      <td>{BANKCODE}</td>
+
+                    </tr>
+
+                    <tr bgcolor="#FFFFFF">
+
+                      <td align="right" class="main_table_tit_1">{_AccountCode} : </td>
+
+                      <td>{ACCOUNTCODE}</td>
+
+                    </tr>
+
+                    <tr bgcolor="#FFFFFF">
+
+                      <td align="right" class="main_table_tit_1">{_AccountName} : </td>
+
+                      <td>{ACCOUNTNAME}</td>
+
+                    </tr>
+
+                    <tr bgcolor="#FFFFFF">
+
+                      <td align="right" class="main_table_tit_1">{_Verification} : </td>
+
+                      <td><img src="../user/verification.php" align="absmiddle" />
+
+                        <input type="text" name="verification" value="" class="za_text_2" size="4" maxlength="4" onkeypress="return ChkKeyCode('+I',event);" /></td>
+
+                    </tr>
+
+                    <tr bgcolor="#FFFFFF">
+
+                      <td height="30" colspan="2" align="center"><input type="submit" class="za_button" value="{_Sure}" />
+
+                        &nbsp; &nbsp; &nbsp;
+
+                        <input type="button" class="za_button" value="{_Cel}" onclick="window.history.back();" /></td>
+
+                    </tr>
+
+                  </form>
+
+                </table></td>
+
+                <td background="//{IMG_URL}/sites/{SITE}/images/main_border5.jpg" style="background-repeat:repeat-y">&nbsp;</td>
+
+              </tr>
+
+              <tr>
+
+                <td><img src="//{IMG_URL}/sites/{SITE}/images/main_border6.jpg" width="18" height="18" /></td>
+
+                <td background="//{IMG_URL}/sites/{SITE}/images/main_border7.jpg" style="background-repeat:repeat-x">&nbsp;</td>
+
+                <td><img src="//{IMG_URL}/sites/{SITE}/images/main_border8.jpg" width="18" height="18" /></td>
+
+              </tr>
+
+            </table>
+
+           <div class="text-7">
+
+             <ol>
+
+               <li class="text-3">{_BankNotice}</li><br /><br />
+
+               <li>{_BankNotice1-som888}</li><br />
+
+               <li>{_BankNotice2-som888}</li><br />
+
+               <li>{_BankNotice3}</li><br /><br />
+
+             </ol>
+
+           </div>
+
+           </td>
+
+        </tr>
+
+      </table>
+
+    <br /></td>
+
+  </tr>
+
+</table>
+
+</body>
+
+</html>

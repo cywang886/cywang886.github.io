@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+<script type="text/javascript">
+var $PayTypeAry = new Array();
+var $MoneyAry   = new Array();
+
+function DescChk(val){
+	for($i in $PayTypeAry){
+		$v = $PayTypeAry[$i];
+		document.getElementById('desc_'+ $v).style.display = "none";
+	}
+	document.getElementById('paytype_'+ val).checked = "checked"
+	document.getElementById('desc_'+ val).style.display = "";
+	ShowMoney(val);
+}
+function ShowMoney(val){
+	for($i in $MoneyAry){
+		$v = $MoneyAry[$i];
+		document.getElementById('money_'+ $v).style.display = "none";
+	}
+	if(document.getElementById('money_'+ val) != null) document.getElementById('money_'+ val).style.display = "";
+}
+function FormChk(){
+	var fm = document.getElementById("form1");
+	if(fm.agreeRule.checked)	fm.ok.disabled = "";
+	else				fm.ok.disabled = "disabled";
+}
+function form1Chk(){
+	var fm = document.getElementById("form1");
+	if(!fm.agreeRule.checked) { alert("請先確定已閱讀「儲值條例說明」，並同意其內容！"); return false; }
+	fm.submit();
+}
+</script>
+<style>
+.service-table{
+	margin-left:0;
+}
+.service-table input[type="text"]{
+	width:115px;
+	height:30px;
+	color:#333;
+	border:1px solid #999;
+	border-radius:0;
+	padding:3px;
+	margin:0;
+}
+.cred input[type="submit"]{
+	background: #C00;
+	border:0;
+	padding:10px 0 10px;
+	width:70px;
+	color:#fff;
+	cursor:pointer;
+	margin-right:6px;
+}
+.cred input[type="submit"]:hover{
+	background:#333;
+}
+</style>
+</head>
+
+<body>
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<div class="main">
+<!-- INCLUDE BLOCK : WEB_SERVICE -->
+
+            <div class="page-main clear">
+                <div class="page-main-l fleft">
+                    <div class="nav-block">
+                        <div class="nav-head">
+                            <h2 class="page-title">儲值專區</h2>
+                            <h3 class="page-subtitle">SORED VALUE</h3>
+                        </div>
+                        <div class="nav-container">
+                            <ul class="nav-main">
+                                <li class="active"><div class="nav-main-bar"><a href="../../app/credit_store/cred.php">超商儲值</a></div></li>
+                                <li><div class="nav-main-bar"><a href="../../app/credit_store/atm.php">ATM儲值</a></div></li>
+                                <li><div class="nav-main-bar"><a href="../../app/credit_store/cred_tip.php">儲值條例說明</a></div></li>
+                            </ul>
+                        </div>
+                        <div class="hotgame">
+                            <ul>
+                                <li>
+                                    <img src="../../sites/{SITE}/images/service/ad/hotgame_01.gif" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-main-r fright">
+                    <div class="page-header profile">
+                        <div class="service-title"><span class="icon-service is04"></span><span>超商儲值</span></div>
+                    </div>
+                    <div class="page-content b">
+
+			<form id="form1" name="form1" method="post" action="cred_step2.php">
+			<div style="margin:0 auto; width:300px;">
+				<!-- START BLOCK : PAYTYPE_DATA -->
+				<div style="width:150px; text-align:center; float:left;">
+				<a href="javascript:DescChk('{PAYTYPE}');"><img src="../../sites/{SITE}/images/pay_credcard_{PAYTYPE}.jpg" alt="{NAME}" name="creditcard" width="135" height="95" border="0" id="creditcard" /></a><br />
+				<input type="radio" name="paytype" id="paytype_{PAYTYPE}" value="{PAYTYPE}" onclick="javascript:DescChk('{PAYTYPE}')" {CHECKED} />
+				</div>
+				<script>$PayTypeAry.push("{PAYTYPE}");</script>
+				{TR}
+				<!-- END BLOCK : PAYTYPE_DATA -->
+			<div style="clear:both;"></div>
+			</div>
+			<div style="width:100%; text-align:center; color:#C00; background:#e3e3e3; line-height:30px; margin:10px 0 20px;">
+			溫馨提示 : 台幣 1 元可以購買 1 點遊戲點數唷 !!
+			</div><br>
+
+			<!-- START BLOCK : PCdata -->
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" id="desc_{PAYTYPE}" style="display:{DISPLAY}">
+			  <tr><td style="font-size:20px; font-weight:bold; padding-bottom:15px;">{NAME}</td></tr>
+			  <tr><td style="padding-bottom:10px;">{NOTES}</td></tr>
+			  {TRTDTABLES}
+			  <!-- START BLOCK : PTdata -->
+			  <tr><td bgcolor="#e4e4e4" style="padding-bottom:10px;"><input type="radio" name="mpid_{SPAYTYPE}" value="{SVAL}" onclick="ShowMoney('{SPAYTYPE}{SSUBTYPE}');" />{SNAME}{SNOTES}</td></tr>
+			  <!-- END BLOCK : PTdata -->
+			  {TRTDTABLEE}
+			</table>
+			<!-- END BLOCK : PCdata --><br>
+
+			<!-- START BLOCK : NPTdata_1 -->
+			<table width="100%" border="0" cellpadding="0" cellspacing="1" id="money_{PS_TYPE}" style="display:{DISPLAY}">
+			  <tr><td colspan="2" style="padding:20px 0 10px; font-size:18px; font-weight:bold;">儲值額度</td></tr>
+			  <!-- START BLOCK : NPTdata_2 -->
+			  <tr class="main_table_tit_1">
+			  <td width="30%" style="padding:10px 0; border-top:1px solid#d3d3d3; font-size:15px;"><input type="radio" name="amount" value="{CASH}"> 台幣 {CASH2} 元</td>
+			  <td style="padding:10px 0; border-top:1px solid#d3d3d3; font-size:15px;">&nbsp;&nbsp; 兌換 {TALAMOUNT} 點遊戲點數 {BONUS}</td>
+			  </tr>
+			  <!-- END BLOCK : NPTdata_2 -->
+			</table>
+			<script> $MoneyAry.push("{PS_TYPE}");</script>
+			<!-- END BLOCK : NPTdata_1 -->
+
+			<p>&nbsp;</p>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+			<tr><td><input type="checkbox" name="agreeRule" onclick="FormChk();"> 我已詳細閱讀「儲值條例說明」，並同意其內容。</td></tr>
+			<tr><td class="cred"><input type="submit" name="ok" value="{_Sure}" disabled onclick="return form1Chk()"></td></tr>
+			</table>
+			</form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="page-command"></div>
+
+</div>
+<!-- INCLUDE BLOCK : WEB_FOOTER -->
+</body>
+</html>

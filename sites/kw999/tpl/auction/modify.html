@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+<style>
+.service-table {
+	margin-left: 0;
+}
+.service-table input[type="text"] {
+	width: 200px;
+	height: 30px;
+	color: #333;
+	border: 1px solid #999;
+	border-radius: 0;
+	padding: 3px;
+	margin: 0;
+}
+.service-table input[type="submit"], .service-table input[type="button"] {
+	background: #C00;
+	border: 0;
+	padding: 10px 0 10px;
+	width: 70px;
+	color: #fff;
+	cursor: pointer;
+	margin-right: 6px;
+}
+.service-table input[type="submit"]:hover {
+	background: #333;
+}
+.service-table input[type="button"] {
+	background: #e3e3e3;
+	color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+
+<div class="main"> 
+  
+  <!-- INCLUDE BLOCK : WEB_SERVICE -->
+  
+  <div class="page-main clear">
+    <div class="page-main-l fleft">
+      <div class="nav-block">
+        <div class="nav-head">
+          <h2 class="page-title">積點兌換</h2>
+          <h3 class="page-subtitle">BONUS POINTS</h3>
+        </div>
+        <div class="nav-container">
+          <ul class="nav-main">
+            <li class="active">
+              <div class="nav-main-bar"><a href="../../app/auction/modify.php">積點兌換</a></div>
+            </li>
+            <li>
+              <div class="nav-main-bar"><a href="../../app/auction/list.php">記錄總覽</a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="hotgame">
+          <ul>
+            <li> <img src="../../sites/{SITE}/images/service/ad/hotgame_01.gif" /> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="page-main-r fright">
+      <div class="page-header profile">
+        <div class="service-title"><span class="icon-service is04"></span><span>積點兌換</span></div>
+      </div>
+      <div class="page-content b">
+        <form action="" method="post" name="editform" target="wFrame">
+          <input type="hidden" name="act" value="new">
+          <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1" class="service-table">
+            <tr>
+              <th width="32%" align="right">{_Point} : </th>
+              <td width="68%"><input type="text" name="amount" value="0" onkeypress="return ChkKeyCode('+I',event);" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" style="color:#C00; background:#e3e3e3; line-height:30px; margin:10px 0 20px; text-align:center;">{_BankData}</td>
+            </tr>
+            <tr>
+              <th align="right">{_BankCode} : </th>
+              <td>{BANKCODE}</td>
+            </tr>
+            <tr>
+              <th align="right">{_AccountCode} : </th>
+              <td>{ACCOUNTCODE}</td>
+            </tr>
+            <tr>
+              <th align="right">{_AccountName} : </th>
+              <td>{ACCOUNTNAME}</td>
+            </tr>
+            <tr>
+              <th align="right">{_Verification} : </th>
+              <td><input type="text" name="verification" value=""  onkeypress="return ChkKeyCode('+I',event);" />
+                <img src="../user/verification.php" align="absmiddle" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" align="center"><input type="submit" value="{_Sure}" />
+                <input type="button" value="{_Cel}" onclick="window.history.back();" /></td>
+            </tr>
+          </table>
+        </form>
+        <iframe src="" id="wFrame" name="wFrame" width="0" height="0" frameborder="0" border="0"></iframe>
+        <div style="color:#C00; background:#e3e3e3; line-height:30px; margin:10px 0 20px; text-align:center;">{_BankNotice}</div>
+        <li>{_BankNotice1-kw999}</li>
+        <li>{_BankNotice2-kw999}</li>
+        <li>{_BankNotice3-kw999}</li>
+      </div>
+    </div>
+  </div>
+  <div class="page-command"></div>
+</div>
+
+<!-- INCLUDE BLOCK : WEB_FOOTER -->
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+<link href="../../style/calendar.css" rel="stylesheet" type="text/css">
+<script src="../../js/calendar.js" type="text/javascript"></script>
+<script language="javascript">
+function getD(s,e){
+	var obj = document.getElementById("sForm");
+	obj.date_s.value = s;
+	obj.date_e.value = e;
+	obj.submit();
+}
+</script>
+<style>
+.tip{ background:#fff; font-size:13px; padding:10px; }
+.record-table{ border-spacing:2px; margin-top:5px; }
+.record-table th{ width:auto; }
+.record-table th:nth-child(2){ border-left: 0px solid #fff; border-right: 0px solid #fff; }
+</style>
+</head>
+
+<body>
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<div class="main">
+<!-- INCLUDE BLOCK : WEB_SERVICE -->
+
+            <div class="page-main clear">
+                <div class="page-main-l fleft">
+                    <div class="nav-block">
+                        <div class="nav-head">
+                            <h2 class="page-title">積點兌換</h2>
+                            <h3 class="page-subtitle">BONUS POINTS</h3>
+                        </div>
+                        <div class="nav-container">
+                            <ul class="nav-main">
+                                <li><div class="nav-main-bar"><a href="../../app/auction/modify.php">積點兌換</a></div></li>
+                                <li class="active"><div class="nav-main-bar"><a href="../../app/auction/list.php">記錄總覽</a></div></li>
+                            </ul>
+                        </div>
+                        <div class="hotgame">
+                            <ul>
+                                <li>
+                                    <img src="../../sites/{SITE}/images/service/ad/hotgame_01.gif" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-main-r fright">
+                    <div class="page-header profile">
+                        <div class="service-title"><span class="icon-service is04"></span><span>記錄總覽</span></div>
+                    </div>
+                    <div class="page-content b">
+			<form name="sForm" id="sForm" method="get">
+			<div class="search_tool">
+			<label>{_Date} :</label>
+			<input type="text" name="date_s" id="sDate_S" size="10" maxlength="10" value="{DATE_S}" class="za_text" onKeyPress="return ChkKeyCode('I',event);"><script language="JavaScript">new tcal({ 'controlname': 'sDate_S', 'langx': '{LANGX}', 'imgpath': '../../sites/{SITE}/images/cal/' });</script>
+			<span class="date-icon"></span>
+			<label>～</label>
+			<input type="text" name="date_e" id="SDate_E" size="10" maxlength="10" value="{DATE_E}" class="za_text" onKeyPress="return ChkKeyCode('I',event);"><script language="JavaScript">new tcal({ 'controlname': 'SDate_E', 'langx': '{LANGX}', 'imgpath': '../../sites/{SITE}/images/cal/' });</script>
+			<span class="date-icon"></span>
+			<input type="submit" value="{_Search}" class="za_button">
+			<span class="paging">
+			<label>{_Di}</label>
+			<select name="page" id="sPage" onchange="this.form.submit();">{PAGE_OPTION}</select>
+			<label>/</label><span>{PAGE_TOTAL}</span>
+			<label>{_Page}</label>
+			<a href="javascript:void(0);" onclick="getD('{WEEK_L_S}','{WEEK_L_E}');" class="btn-paging">{_LastWeek}</a>
+			<a href="javascript:void(0);" onclick="getD('{WEEK_S}','{WEEK_E}');" class="btn-paging">{_ThisWeek}</a>
+			</span>
+			</form>
+            <br>
+            <table class="record-table">
+              <tr>
+		<th width="20%">{_Date}</th>
+		<th width="20%">{_BankCode}</th>
+		<th width="20%">{_AccountCode}</th>
+		<th width="20%">{_Point}</th>
+		<th width="20%">{_Status}</th>
+              </tr>
+              <!-- START BLOCK : Data -->
+              <tr onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#FFFBCC'">
+		<td>{ADDDATE}</td>
+		<td>{BANKCODE}</td>
+		<td>{ACCOUNTCODE}</td>
+		<td>{AMOUNT}</td>
+		<td>{STATUS}</td>
+              </tr>
+              <!-- END BLOCK : Data -->
+              <!-- START BLOCK : NoData -->
+              <tr class="main_table_cen">
+                <td colspan="5" class="tip">{_NoData}</td>
+              </tr>
+              <!-- END BLOCK : NoData -->
+            </table>
+                </div>
+                    </div>
+
+                    </div>
+                    <div class="page-command"></div>
+                </div>
+            </div>
+        </div>
+        <!-- INCLUDE BLOCK : WEB_FOOTER -->
+</body>
+</html>

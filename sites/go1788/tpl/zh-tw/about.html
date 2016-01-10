@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+</head>
+
+<body topmargin="0" leftmargin="0">
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+  <tr>
+  
+    <td valign="top" class="login_tis">
+      <!-- INCLUDE BLOCK : WEB_LOGIN -->
+    </td>
+    
+    <td width="770" valign="top"><br />
+    	
+    	
+    	<table width="680" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr class="sale_text">
+            <td height="30" valign="top"><a href="../../app/index.php">首頁</a> &gt; <span class="text-4">實體賭場介紹</span></td>
+          </tr>
+		</table>
+        
+
+
+
+                    	<div class="main_title_subject-box">
+                            <div class="main_title_subject-logo"></div>
+                            <div class="main_title_subject-words">凱旋門廳</div>
+                        </div>
+                        
+                        <!-- 輪播開始-->
+                
+                        <div id="abgne-block-20120110-3">
+                            <div class="showbox-3">
+                                <a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k01.jpg" width="300" height="225" /></a>
+                            </div>
+                
+                            <ul class="link" style="width:300px; height:auto; float:right;">
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k01.jpg" title="" /></a></li>
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k02.jpg" title="" /></a></li>
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k03.jpg" title="" /></a></li>
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k04.jpg" title="" /></a></li>
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k05.jpg" title="" /></a></li>
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k06.jpg" title="" /></a></li>
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k07.jpg" title="" /></a></li>
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k08.jpg" title="" /></a></li>
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k09.jpg" title="" /></a></li>
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k10.jpg" title="" /></a></li>
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k11.jpg" title="" /></a></li>
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k12.jpg" title="" /></a></li>
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k13.jpg" title="" /></a></li>
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k14.jpg" title="" /></a></li>
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k15.jpg" title="" /></a></li>
+                                <li><a href="#"><img src="http://{IMG_URL}/sites/{SITE}/images/about/k/k16.jpg" title="" /></a></li>
+                            </ul>
+                        </div>
+                
+                      <!-- 輪播結束 --> 
+
+
+
+
+    </td>
+
+  </tr>
+</table>
+
+<script type="text/javascript">
+	$(function(){
+		// 先取得相關的區塊及預設要先顯示那一個
+		var $block = $('#abgne-block-20120110-3'),
+			$link = $block.find('.link li'),
+			$showBox = $block.find('.showbox-3'),
+			_default = 0,
+			timer, speed = 1000;
+
+		// 幫 $link a 加入一個 span.triangle, 用來產生三角形用
+		$link.find('a').append('<span class="triangle"></span>');
+
+		// 當滑鼠移到 $link 上時
+		$link.mouseover(function(){
+			var $this = $(this);
+
+			// 修改 $showBox 中的超連結及圖片
+			$showBox.html('<a href="'+$this.find('a').attr('href')+'"><img src="'+$this.find('img').attr('src')+'" /></a>');
+			// 幫被滑鼠移上去的 li 加上 .on
+			$this.addClass('on').siblings('.on').removeClass('on');
+		}).click(function(){
+			// 如果是點擊到 $link 時則取消連結功能
+			return false;
+		}).eq(_default).mouseover();
+
+		var timer, speed = 2000
+		$block.hover(function(){
+			// 當滑鼠移入時, 停止計時器
+			clearTimeout(timer);
+		}, function(){
+			// 當滑鼠移出時, 啟動計時器
+			timer = setTimeout(auto, speed);
+		});
+
+		// 用來自動輪播使用
+		function auto(){
+			var _index = $link.filter('.on').index();
+			_index = (_index + 1) % $link.length;
+
+			$link.eq(_index).mouseover();
+			timer = setTimeout(auto, speed);
+		}
+
+		// 啟動計時器
+		timer = setTimeout(auto, speed);
+	});
+</script>
+<!-- 賭場介紹輪播 -->
+
+<!-- INCLUDE BLOCK : WEB_FOOT -->
+
+</body>
+
+</html>

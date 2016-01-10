@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+</head>
+
+<body topmargin="0" leftmargin="0">
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="margin-bottom:86px;">
+  <tr>
+    <td valign="top" class="login_tis">
+      <!-- INCLUDE BLOCK : WEB_LOGIN -->
+    </td>
+    <td width="770" valign="top"><br />
+      <table border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/pic_mem_center.jpg" width="300" height="55" /></td>
+          <td><img src="//{IMG_URL}/sites/{SITE}/images/pic.jpg" width="440" height="55" /></td>
+        </tr>
+      </table>
+      <br>
+      <table width="720" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td><table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td><a href="info.php"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_info_up.jpg" width="108" height="33" hspace="5" border="0" onmouseover="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_info_down.jpg'" onmouseout="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_info_up.jpg'" /></a></td>
+              <td><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_chgpwd_down.jpg" width="108" height="33" border="0" /></td>
+              <td><a href="modify.php"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_modify_up.jpg" width="108" height="33" hspace="5" border="0" onmouseover="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_modify_down.jpg'" onmouseout="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_modify_up.jpg'" /></a></td>
+              <td><a href="../record/pay.php"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_record_up.jpg" width="108" height="33" border="0" onmouseover="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_record_down.jpg'" onmouseout="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_record_up.jpg'" /></a></td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td valign="top" class="main_line"><br />
+            <table width="450" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="1%"><img src="//{IMG_URL}/sites/{SITE}/images/main_border1.jpg" width="18" height="18" /></td>
+                <td width="98%" background="//{IMG_URL}/sites/{SITE}/images/main_border2.jpg" style="background-repeat:repeat-x">&nbsp;</td>
+                <td width="1%"><img src="//{IMG_URL}/sites/{SITE}/images/main_border3.jpg" width="18" height="18" /></td>
+              </tr>
+              <tr>
+                <td background="//{IMG_URL}/sites/{SITE}/images/main_border4.jpg" style="background-repeat:repeat-y">&nbsp;</td>
+                <td bgcolor="#250038"><table width="100%" border="0" align="center" cellpadding="5" cellspacing="1" class="main_table_line">
+                  <!-- START BLOCK : chgpwd -->
+                  <form action="" method="post" name="pwdform" id="pwdform">
+                    <input type="hidden" name="act" value="chgpwd" />
+                    <tr bgcolor="#ffffff">
+                      <td width="100" align="right" class="main_table_tit_1"> {_OldPwd}:</td>
+                      <td><input class="za_text" maxlength="12" size="8" type="password" name="oldpwd" value="" onkeypress="return ChkKeyCode('L',event);" /></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                      <td align="right" class="main_table_tit_1"> {_NewPwd}:</td>
+                      <td><input class="za_text" maxlength="12" size="8" type="password" name="newpwd" value="" onkeypress="return ChkKeyCode('L',event);" /></td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                      <td align="right" class="main_table_tit_1"> {_ChkPwd}:</td>
+                      <td><input class="za_text" maxlength="12" size="8" type="password" name="chkpwd" value="" onkeypress="return ChkKeyCode('L',event);" />{_PwdNotes}</td>
+                    </tr>
+                    <tr bgcolor="#ffffff">
+                      <td height="30" colspan="2" align="center"><input type="submit" class="za_button" value="{_Sure}" />
+                        &nbsp; &nbsp; &nbsp;
+                        <input type="reset" class="za_button" /></td>
+                    </tr>
+                  </form>
+                  <!-- END BLOCK : chgpwd -->
+                  <!-- START BLOCK : Community -->
+                  <tr bgcolor="#ffffff">
+                    <td class="main_table_tit_1">{_ChgPwdMemo}</td>
+                  </tr>
+                  <!-- END BLOCK : Community -->
+                </table></td>
+                <td background="//{IMG_URL}/sites/{SITE}/images/main_border5.jpg" style="background-repeat:repeat-y">&nbsp;</td>
+              </tr>
+              <tr>
+                <td><img src="//{IMG_URL}/sites/{SITE}/images/main_border6.jpg" width="18" height="18" /></td>
+                <td background="//{IMG_URL}/sites/{SITE}/images/main_border7.jpg" style="background-repeat:repeat-x">&nbsp;</td>
+                <td><img src="//{IMG_URL}/sites/{SITE}/images/main_border8.jpg" width="18" height="18" /></td>
+              </tr>
+            </table>
+            <br /></td>
+        </tr>
+    </table>
+    <br /></td>
+  </tr>
+</table>
+</body>
+</html>

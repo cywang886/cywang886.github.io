@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+<link href="//{IMG_URL}/sites/{SITE}/style/calendar.css" rel="stylesheet" type="text/css" />
+<script src="/js/calendar.js" type="text/javascript"></script>
+<script language="javascript">
+function getD(s,e){
+	var obj = document.getElementById("sForm");
+	obj.date_s.value = s;
+	obj.date_e.value = e;
+	obj.submit();
+}
+</script>
+</head>
+
+<body topmargin="0" leftmargin="0">
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+  <tr>
+    <td valign="top" class="login_tis">
+      <!-- INCLUDE BLOCK : WEB_LOGIN -->
+    </td>
+    <td width="770" height="500" valign="top"><br />
+      <table border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/pic_mem_center.jpg" width="300" height="55" /></td>
+        <td><img src="//{IMG_URL}/sites/{SITE}/images/pic.jpg" width="440" height="55" /></td>
+      </tr>
+      </table>
+      <br />
+      <table width="720" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td>
+           <table border="0" cellpadding="0" cellspacing="0">
+            <tr><td><a href="../user/info.php"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_info_up.jpg" width="108" height="33" hspace="5" border="0" onmouseover="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_info_down.jpg'" onmouseout="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_info_up.jpg'" /></a></td>
+            <td><a href="../user/chgpwd.php"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_chgpwd_up.jpg" width="108" height="33" border="0" onmouseover="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_chgpwd_down.jpg'" onmouseout="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_chgpwd_up.jpg'" /></a></td>
+            <td><a href="../user/modify.php"><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_modify_up.jpg" width="108" height="33" hspace="5" border="0" onmouseover="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_modify_down.jpg'" onmouseout="this.src='//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_modify_up.jpg'" /></a></td>
+            <td><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/btn_record_down.jpg" width="108" height="33" border="0" /></td>
+          </tr>
+         </table>
+         </td>
+        </tr>
+        <tr>
+          <td valign="top" class="main_line">
+            <form name="sForm" id="sForm" method="get">
+            <table width="100%" border="0" align="center" cellpadding="3" cellspacing="0">
+              <tr class="main_table_tit_1">
+                <td>{_PayDT} : </td>
+                <td>
+                  <input type="text" name="date_s" id="sDate_S" size="10" maxlength="10" value="{DATE_S}" class="za_text" onKeyPress="return ChkKeyCode('I',event);" /><script language="JavaScript">new tcal({'controlname':'sDate_S', 'langx':'{LANGX}', 'imgpath':'//{IMG_URL}/sites/{SITE}/images/cal/'});</script>～
+                  <input type="text" name="date_e" id="SDate_E" size="10" maxlength="10" value="{DATE_E}" class="za_text" onKeyPress="return ChkKeyCode('I',event);" /><script language="JavaScript">new tcal({'controlname':'SDate_E', 'langx':'{LANGX}', 'imgpath':'//{IMG_URL}/sites/{SITE}/images/cal/'});</script>
+                  <input type="submit" value="{_Search}" class="za_button" />
+                </td>
+                <td>{_Di} <select name="page" id="sPage" onchange="this.form.submit();">{PAGE_OPTION}</select> / {PAGE_TOTAL} {_Page} &nbsp; </td>
+                <td>
+                  <a href="javascript:void(0);" onclick="getD('{WEEK_L_S}','{WEEK_L_E}');"><font color="#C00000"><u><b>{_LastWeek}</b></u></font></a> &nbsp;&nbsp;
+                  <a href="javascript:void(0);" onclick="getD('{WEEK_S}','{WEEK_E}');"><font color="#C00000"><u><b>{_ThisWeek}</b></u></font></a>
+                </td>
+              </tr>
+            </table>
+            </form>
+            <br />
+            <table width="650" border="0" align="center" cellpadding="3" cellspacing="1" class="main_table_line">
+              <tr class="main_table_tit">
+		<td width="100">ID</td>
+		<td width="100">{_RealMoney}</td>
+		<td width="100">{_Amount}</td>
+		<td width="100">{_Bonus}</td>
+		<td width="100">{_Total}</td>
+		<td width="150">{_PayDT}</td>
+              </tr>
+              <!-- START BLOCK : Data -->
+              <tr class="main_table_cen" onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#FFFBCC'">
+		<td>{ID}</td>
+		<td>{REALMONEY}</td>
+		<td>{AMOUNT}</td>
+		<td>{BONUS}</td>
+		<td>{TOTAL}</td>
+		<td>{PAYDT}</td>
+              </tr>
+              <!-- END BLOCK : Data -->
+              <!-- START BLOCK : NoData -->
+              <tr class="main_table_cen"><td height="30" colspan="6" class="text-3" style="font-size:12px;">{_NoData}</td></tr>
+              <!-- END BLOCK : NoData -->
+            </table>
+          <br /></td>
+        </tr>
+      </table>
+     </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+<script type="text/javascript">
+function form1Chk(){
+	/*
+	if( document.all.form1.paytype.value == "I"){
+		if(document.all.form1.MyCardCardId.value=='')
+			{ document.all.form1.MyCardCardId.focus();	alert("MYCARD 卡號 請勿空白!!"); return false; }
+		if(document.all.form1.MyCArdPwd.value=='')
+			{ document.all.form1.MyCArdPwd.focus();		alert("MYCARD 密碼 請勿空白!!"); return false; }
+	}
+	*/
+	document.form1.submit();
+}
+</script>
+<style>
+.service-table{
+	margin-left:0;
+}
+.service-table th,.service-table td{
+	padding:10px;
+}
+.service-table input[type="text"]{
+	width:250px;
+	height:30px;
+	color:#333;
+	border:1px solid #999;
+	border-radius:0;
+	padding:3px;
+	margin:0;
+}
+.cred input[type="submit"]{
+	background: #C00;
+	border:0;
+	padding:10px 0 10px;
+	width:70px;
+	color:#fff;
+	cursor:pointer;
+	margin-right:6px;
+}
+.cred input[type="submit"]:hover{
+	background:#333;
+}
+</style>
+</head>
+
+<body>
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<div class="main">
+<!-- INCLUDE BLOCK : WEB_SERVICE -->
+
+            <div class="page-main clear">
+                <div class="page-main-l fleft">
+                    <div class="nav-block">
+                        <div class="nav-head">
+                            <h2 class="page-title">儲值專區</h2>
+                            <h3 class="page-subtitle">SORED VALUE</h3>
+                        </div>
+                        <div class="nav-container">
+                            <ul class="nav-main">
+                                <li class="active"><div class="nav-main-bar"><a href="../../app/credit_store/cred.php">超商儲值</a></div></li>
+                                <li><div class="nav-main-bar"><a href="../../app/credit_store/atm.php">ATM儲值</a></div></li>
+                                <li><div class="nav-main-bar"><a href="../../app/credit_store/cred_tip.php">儲值條例說明</a></div></li>
+                            </ul>
+                        </div>
+                        <div class="hotgame">
+                            <ul>
+                                <li>
+                                    <img src="../../sites/{SITE}/images/service/ad/hotgame_01.gif" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-main-r fright">
+                    <div class="page-header profile">
+                        <div class="service-title"><span class="icon-service is04"></span><span>超商儲值</span></div>
+                    </div>
+                    <div class="page-content b">
+
+              <form id="form1" name="form1" method="post" action="cred_step3.php">
+              <input name="cash" type="hidden" value="{CASH}">			<!--消費金額-->
+              <input name="amount" type="hidden" value="{AMOUNT}">              <!--購得點數-->
+              <input name="bonus" type="hidden" value="{BONUS}">             	<!--贈點-->
+              <input name="paytype" type="hidden" value="{PAYTYPE}">            <!--付費方式(主項)-->
+              <input name="subtype" type="hidden" value="{SUBTYPE}">            <!--付費方式(副項)-->
+              <input name="mpid" type="hidden" value="{MPID}">              	<!--統振 系統商代號-->
+
+              <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding:20px 0 10px; font-size:18px; font-weight:bold;">購買資訊</td>
+                </tr>
+              </table>
+              <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="service-table">
+                <tr style="display:{SHOW_PAYTYPE}">
+                  <th width="100" align="center">消費金額</th>
+                  <td>{CASH} 元</td>
+                </tr>
+                <tr style="display:{SHOW_PAYTYPE}">
+                  <th align="center">購得點數</th>
+                  <td>{AMOUNT}</td>
+                </tr>
+                <tr style="display:{SHOW_MYCARD}">
+                  <th align="center">MYCARD 卡號</th>
+                  <td><input name="MyCardCardId" type="text" id="MyCardCardId" value="" /></td>
+                </tr>
+                <tr style="display:{SHOW_MYCARD}">
+                  <th align="center">MYCARD 密碼</th>
+                  <td><input name="MyCArdPwd" type="text" id="MyCArdPwd" value="" /></td>
+                </tr>
+                <tr>
+                  <th align="center">付費方式</th>
+                  <td>{PAYTYPENAME}</td>
+                </tr>
+              </table>
+              <p class="cred"><input type="submit" value="{_Sure}" onclick="return form1Chk()"/></p>
+              </form>
+
+                </div>
+              </div>
+            </div>
+            <div class="page-command"></div>
+</div>
+<!-- INCLUDE BLOCK : WEB_FOOTER -->
+</body>
+</html>

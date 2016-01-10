@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{TITLE}</title>
+<!-- -->
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+</head>
+
+<body topmargin="0" leftmargin="0">
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="margin-bottom:86px;">
+  <tr>
+    <td valign="top" class="login_tis">
+      <!-- INCLUDE BLOCK : WEB_LOGIN -->
+    </td>
+    <td width="770" valign="top"><br />
+      <table border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><img src="//{IMG_URL}/sites/{SITE}/images/{LANGX}/pic_notice.jpg" width="300" height="55" /></td>
+        <td><img src="//{IMG_URL}/sites/{SITE}/images/pic.jpg" width="440" height="55" /></td>
+      </tr>
+      </table>
+　　　<form name="form1" method="post" action="notice.php" style="margin:0px;padding:0px;">
+      <table border="0" cellpadding="0" cellspacing="0" style="display:{NONE};">
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{_SelectNotesType} : &nbsp;</td>
+          <td><select name="type" onchange="this.form.submit();">{NOTES_OPTION}</select></td>
+        </tr>
+      </table>
+      </form>
+      <!-- START BLOCK : Msg_List -->
+　　　<table width="700" border="0" align="center" cellpadding="5" cellspacing="1" class="main_table_line">
+       <tr class="main_table_tit">
+         <td width="20%">{_NoticeDate}</td>
+         <td>{_Contents}</td>
+       </tr>
+       <!-- START BLOCK : Msg_Data -->
+       <tr class="main_table_cen" onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#FFFBCC'">
+         <td>{ADDDATE}</td>
+         <td align="left">{TYPE}{TITLE}</td>
+       </tr>
+       <!-- END BLOCK : Msg_Data -->
+      </table>
+      <!-- END BLOCK : Msg_List -->
+
+      <!-- START BLOCK : Msg -->
+      <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="{_Back}" onClick="window.history.go(-1);" />
+      <br />
+　　　<table width="700" border="0" align="center" cellpadding="5" cellspacing="1" class="main_table_line">
+       <tr class="main_table_tit">
+         <td width="20%">{_NoticeDate}</td>
+         <td>{_Contents}</td>
+       </tr>
+       <tr class="main_table_cen">
+         <td>{ADDDATE}</td>
+         <td align="left">{NOTES}</td>
+       </tr>
+      </table>
+      <br />
+      <!-- END BLOCK : Msg -->
+    </td>
+  </tr>
+</table>
+</body>
+</html>

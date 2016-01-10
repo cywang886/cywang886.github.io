@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{TITLE}</title>
+<!-- INCLUDE BLOCK : WEB_SCRIPT -->
+</head>
+<body>
+<!-- INCLUDE BLOCK : WEB_HEAD -->
+<div class="main">
+  <!-- INCLUDE BLOCK : WEB_SERVICE -->
+  <div class="page-main clear">
+    <div class="page-main-l fleft">
+      <div class="nav-block">
+        <div class="nav-head">
+          <h2 class="page-title">最新公告</h2>
+          <h3 class="page-subtitle">NEWS</h3>
+        </div>
+        <!--<a href="../../app/user/join1.php"><img src="../sites/{SITE}/images/teach/p_ad1.jpg" /></a>-->
+      </div>
+    </div>
+    <div class="page-main-r fright">
+      <div class="page-content np b">
+        <form name="form1" method="post" action="notice.php" style="margin:0px;padding:0px;">
+          <table border="0" cellpadding="0" cellspacing="0" style="display:{NONE}; margin-top:10px;">
+            <tr>
+              <td valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{_SelectNotesType} : &nbsp;</td>
+              <td><select name="type" onChange="this.form.submit();">
+                  {NOTES_OPTION}
+                </select></td>
+            </tr>
+          </table>
+        </form>
+        <!-- START BLOCK : Msg_List -->
+        <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
+          <tr>
+            <td width="15%" align="center" class="news_bar">{_NoticeDate}</td>
+            <td align="center" class="news_bar">{_Contents}</td>
+          </tr>
+          <!-- START BLOCK : Msg_Data -->
+          <tr onMouseOut="this.style.backgroundColor=''" onMouseOver="this.style.backgroundColor='#ececec'">
+            <td align="center" class="news_bar01">{ADDDATE}</td>
+            <td align="left" class="news_bar01">{TYPE}{TITLE}</td>
+          </tr>
+          <!-- END BLOCK : Msg_Data -->
+        </table>
+        <!-- END BLOCK : Msg_List -->
+        <!-- START BLOCK : Msg -->
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" value="{_Back}" onClick="window.history.back();">
+        <br />
+        <table width="100%" border="0" align="center" cellpadding="5" cellspacing="1">
+          <tr>
+            <td width="15%" align="center" class="news_bar">{_NoticeDate}</td>
+            <td align="center" class="news_bar">{_Contents}</td>
+          </tr>
+          <tr>
+            <td align="center" class="news_bar01">{ADDDATE}</td>
+            <td align="left" class="news_bar01">{NOTES}</td>
+          </tr>
+        </table>
+        <!-- END BLOCK : Msg -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- INCLUDE BLOCK : WEB_FOOTER -->
+</body>
+</html>
